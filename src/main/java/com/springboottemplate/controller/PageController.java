@@ -46,7 +46,6 @@ public class PageController extends WebMvcConfigurerAdapter {
 
 		super.addInterceptors(registry);
 	}
-
 	/* 跨域 */
 //	public void addCorsMappings(CorsRegistry registry) {
 //	    super.addCorsMappings(registry);

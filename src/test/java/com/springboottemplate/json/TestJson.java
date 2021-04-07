@@ -1,8 +1,16 @@
 package com.springboottemplate.json;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.aspectj.util.FileUtil;
 import org.junit.Test;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -12,6 +20,52 @@ import java.util.Map;
  **/
 public class TestJson {
 
+    /**
+     * 测试一下字符串转jsonObeject
+     */
+    @Test
+    public void test4() throws IOException {
+        //  File file = new File("D:\\ces.json");
+        // File file = new File("classpath:ces.json");
+
+      //  File file = new File("test/resources/ces.json");
+
+        Resource resource = new ClassPathResource("ces.json");
+        File file = resource.getFile();
+        String s = FileUtil.readAsString(file);
+        System.out.println(s);
+
+        HashMap hashMap = JSONObject.parseObject(s, HashMap.class);
+        JSONObject jsonObject = JSONObject.parseObject(s);
+        System.out.println("****"+hashMap.containsValue("ID1"));
+        System.out.println(hashMap.toString());
+        String features = (String) hashMap.get("features");
+        System.out.println(features);
+       // HashMap featuresMap = JSONObject.parseObject(features, HashMap.class); 报错的
+
+
+    }
+
+
+    /**
+     * 测试一下jsonObejct
+     */
+    @Test
+    public void test3() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "张三");
+        jsonObject.put("id", "1");
+        System.out.println(jsonObject.toString());
+    }
+
+    @Test
+    public void test2() {
+        String s = "";
+        String s1 = JSON.toJSONString(null);
+        TestJson testJson = JSONObject.parseObject(null, TestJson.class);
+        System.out.println(testJson);
+        System.out.println(s1);
+    }
 
     @Test
     public void test1() {
@@ -19,7 +73,7 @@ public class TestJson {
 
         Map<String, Object> map = (Map<String, Object>) JSONObject.parse(s);
         System.out.println(map);
-        Map<String, Object> formDataMap  = (Map<String, Object>) JSONObject.parse(map.get("formData").toString());
+        Map<String, Object> formDataMap = (Map<String, Object>) JSONObject.parse(map.get("formData").toString());
         System.out.println(formDataMap);
     }
 
@@ -130,7 +184,7 @@ public class TestJson {
 
         Map<String, Object> map = (Map<String, Object>) JSONObject.parse(s);
         System.out.println(map);
-        Map<String, Object> formDataMap  = (Map<String, Object>) JSONObject.parse(map.get("formData").toString());
+        Map<String, Object> formDataMap = (Map<String, Object>) JSONObject.parse(map.get("formData").toString());
         System.out.println(formDataMap);
     }
 }

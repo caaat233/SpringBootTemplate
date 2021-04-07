@@ -34,4 +34,5 @@ public class ArrayTest {
 		System.out.println(aaa.substring(0,10));//java.lang.StringIndexOutOfBoundsException: String index out of range: 10
 	}
 
+
 }

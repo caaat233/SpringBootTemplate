@@ -3,12 +3,14 @@ package com.springboottemplate.mysql;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.yaml.snakeyaml.events.Event;
 
 /*
  * 先test数据库user2数据表随机写入uer数据
@@ -22,8 +24,56 @@ public class MysqlUser2 {
 
 	static PreparedStatement preparedStatement = null;
 	{
-		connection = JdbcUtil.getConnection();
+		//connection = JdbcUtil.getConnection();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection=	DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8", "root", "123456");
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
+
+	@Test
+	public void insertUser() throws Exception {
+		long  sid=541513140101L;
+		int age=20;
+		for (int i = 0; i <= 200; i++) {
+			String sql = "insert into user(sid,name,sex,age,job,phone) values(?,?,?,?,?,?)";
+
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setLong(1,sid);
+			preparedStatement.setString(2, RandomValue.getChineseName());
+			preparedStatement.setString(3,i%3==0?String.valueOf("M"):String.valueOf("F"));
+			String job="开发";
+
+			if (i%4==0){
+				job="开发";
+				age+=2;
+			}else if (i%5==0){
+				job="产品";
+				age+=3;
+			}else if (i%6==0){
+				job="需求";
+				age-=5;
+			}else if (i%7==0){
+				age-=10;
+				job="测试";
+			}
+			preparedStatement.setInt(4,age);
+			preparedStatement.setString(5, job);
+			preparedStatement.setString(6, RandomValue.getTel());
+			preparedStatement.executeUpdate();
+			sid++;
+		}
+
+
+
+
+
+	}
+
 
 	@Test
 	public void test1() {
@@ -33,13 +83,13 @@ public class MysqlUser2 {
 			for (int i = 0; i < 97; i++) {
 				String sql = "insert into user2(username,address,sex,no1,no2) values(?,?,?,?,?)";
 				preparedStatement = connection.prepareStatement(sql);
-				User2 user = new User2(test2(), "null", test3(), test4(), test4());
-				preparedStatement.setString(1, user.getUsername());
-				preparedStatement.setString(2, user.getAddrss());
-				preparedStatement.setString(3, user.sex);
-				preparedStatement.setInt(4, user.getNo1());
-				preparedStatement.setInt(5, user.getNo2());
-				preparedStatement.executeUpdate();
+//				User2 user = new User2(test2(), "null", test3(), test4(), test4());
+//				preparedStatement.setString(1, user.getUsername());
+//				preparedStatement.setString(2, user.getAddrss());
+//				preparedStatement.setString(3, user.sex);
+//				preparedStatement.setInt(4, user.getNo1());
+//				preparedStatement.setInt(5, user.getNo2());
+//				preparedStatement.executeUpdate();
 
 			}
 

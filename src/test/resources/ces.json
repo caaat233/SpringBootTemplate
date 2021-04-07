@@ -1,0 +1,11 @@
+{
+	"updateFrom": "CALCULATED",
+	"features": ";newVolumetricWeight=280.0;oldVolumetricWeight=280.0;selectChargeableWeightFrom=dead;sourceGrouping=SYSTEM;calculatedLogicVersion=newCalVol;",
+	"outBizCode": "LDMFO6467385755",
+	"orgCode": "LAZADA",
+	"unitCode": "FU2120018800000000000000947816136",
+	"tenantId": "LAZADA_ID",
+	"siteId": "ID",
+	"class": "com.cainiao.global.lnp.oms.common.dto.coremodel.FulfilUnitDimensionDTO",
+	"trackingNumber": "TEST1617158138159"
+}

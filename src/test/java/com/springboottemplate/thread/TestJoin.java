@@ -1,5 +1,9 @@
 package com.springboottemplate.thread;
 
+/**
+ * 首先给出结论：t.join()方法只会使主线程(或者说调用t.join()的线程)进入等待池并等待t线程执行完毕后才会被唤醒。
+ * 并不影响同一时刻处在运行状态的其他线程。
+ */
 public class TestJoin {
 	public static void main(String[] args) {
 		MyThread my=new MyThread();

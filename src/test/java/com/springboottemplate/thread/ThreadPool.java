@@ -2,6 +2,7 @@ package com.springboottemplate.thread;
 
 import org.junit.Test;
 
+import javax.swing.plaf.TableHeaderUI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -21,8 +22,8 @@ public class ThreadPool {
      * @return: void
      */
     @Test
-    public void test() {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+    public void test() throws InterruptedException {
+        ExecutorService executor = Executors.newFixedThreadPool(10);
         List<String> userNameList = new ArrayList<>();
         userNameList.add("1");
         userNameList.add("1");
@@ -32,15 +33,16 @@ public class ThreadPool {
         userNameList.add("1");
         //假设userNameList有一百条数据
         for (String username : userNameList) {
-
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println("我说线程：" + Thread.currentThread().getName());
+                    System.out.println("我是线程：" + Thread.currentThread().getName());
+                    System.out.println("写库成功");
                 }
             });
 
         }
+        Thread.sleep(2000);
 
     }
 

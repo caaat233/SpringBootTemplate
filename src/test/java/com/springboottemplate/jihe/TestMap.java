@@ -1,11 +1,8 @@
 package com.springboottemplate.jihe;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 public class TestMap {
@@ -44,7 +41,26 @@ public class TestMap {
     }
 
 
+	/**
+	 *
 
+	 * @return
+	 */
+	@Test
+	public void test5(){
+		Map<String, String> m3 = new HashMap<String, String>();
+		m3.put("a", "abc");
+		m3.put("b", "123");
+		m3.put("C", "123");
+		Map<String, String> m3Copy = new HashMap<String, String>(m3);
+		m3.remove("a");
+		System.out.println(m3);//{b=123, C=123}
+		System.out.println(m3Copy);//{a=abc, b=123, C=123}
+
+
+
+
+	}
 
 
 	// 将map值全部转换为大写

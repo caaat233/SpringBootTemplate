@@ -7,3 +7,289 @@
 2020-05-19 09:57:38.105 ERROR 4128 --- [pool-2-thread-1] c.s.t.Task1                              : 日志级别error定时任务，现在时间：1589853458105
 2020-05-19 09:57:48.105 ERROR 4128 --- [pool-2-thread-1] c.s.t.Task1                              : 日志级别error定时任务，现在时间：1589853468105
 2020-05-19 09:57:58.105 ERROR 4128 --- [pool-2-thread-1] c.s.t.Task1                              : 日志级别error定时任务，现在时间：1589853478105
+2021-01-04 20:57:17.837  INFO 9044 --- [restartedMain] c.s.SpringBootTemplateApplication        : Starting SpringBootTemplateApplication on L-R90MPVPV-1534 with PID 9044 (D:\IDEA\MyProjrct\SpringBootTemplate\target\classes started by 唐涛 in D:\IDEA\MyProjrct\SpringBootTemplate)
+2021-01-04 20:57:17.859  INFO 9044 --- [restartedMain] c.s.SpringBootTemplateApplication        : No active profile set, falling back to default profiles: default
+2021-01-04 20:57:19.112  INFO 9044 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@470e266b: startup date [Mon Jan 04 20:57:19 CST 2021]; root of context hierarchy
+2021-01-04 20:57:24.189  INFO 9044 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2021-01-04 20:57:24.238  INFO 9044 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-01-04 20:57:24.242  INFO 9044 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.27
+2021-01-04 20:57:25.153  INFO 9044 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-01-04 20:57:25.155  INFO 9044 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 6048 ms
+2021-01-04 20:57:25.913  INFO 9044 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-04 20:57:25.925  INFO 9044 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-04 20:57:25.926  INFO 9044 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-04 20:57:25.928  INFO 9044 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-04 20:57:25.930  INFO 9044 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-04 20:57:26.195  WARN 9044 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.springboottemplate.mapper.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-01-04 20:57:26.202  INFO 9044 --- [restartedMain] o.a.c.c.StandardService                  : Stopping service [Tomcat]
+2021-01-04 20:57:26.245  INFO 9044 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2021-01-04 20:57:26.615 ERROR 9044 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.springboottemplate.service.impl.UserServiceImpl required a bean of type 'com.springboottemplate.mapper.UserMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.springboottemplate.mapper.UserMapper' in your configuration.
+
+2021-01-04 20:58:19.045  INFO 15828 --- [restartedMain] c.s.SpringBootTemplateApplication        : Starting SpringBootTemplateApplication on L-R90MPVPV-1534 with PID 15828 (D:\IDEA\MyProjrct\SpringBootTemplate\target\classes started by 唐涛 in D:\IDEA\MyProjrct\SpringBootTemplate)
+2021-01-04 20:58:19.050  INFO 15828 --- [restartedMain] c.s.SpringBootTemplateApplication        : No active profile set, falling back to default profiles: default
+2021-01-04 20:58:19.485  INFO 15828 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@694066a9: startup date [Mon Jan 04 20:58:19 CST 2021]; root of context hierarchy
+2021-01-04 20:58:21.531  INFO 15828 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2021-01-04 20:58:21.544  INFO 15828 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-01-04 20:58:21.545  INFO 15828 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.27
+2021-01-04 20:58:21.715  INFO 15828 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-01-04 20:58:21.715  INFO 15828 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 2235 ms
+2021-01-04 20:58:21.989  INFO 15828 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-04 20:58:21.994  INFO 15828 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-04 20:58:21.995  INFO 15828 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-04 20:58:21.995  INFO 15828 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-04 20:58:21.995  INFO 15828 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-04 20:58:22.547  INFO 15828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@694066a9: startup date [Mon Jan 04 20:58:19 CST 2021]; root of context hierarchy
+2021-01-04 20:58:22.602  INFO 15828 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addInterceptors(InterceptorRegistry))
+2021-01-04 20:58:22.635  INFO 15828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-04 20:58:22.637  INFO 15828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/userResponseBody]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser1(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-04 20:58:22.637  INFO 15828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findAllUser2]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser2(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-04 20:58:22.640  INFO 15828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-01-04 20:58:22.641  INFO 15828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-04 20:58:22.668  INFO 15828 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addViewControllers(ViewControllerRegistry))
+2021-01-04 20:58:22.678  INFO 15828 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-01-04 20:58:22.679  INFO 15828 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/userinfo] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-01-04 20:58:22.698  INFO 15828 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-04 20:58:22.698  INFO 15828 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-04 20:58:22.766  INFO 15828 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-04 20:58:22.875  WARN 15828 --- [restartedMain] o.t.t.TemplateMode                       : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-01-04 20:58:23.357  INFO 15828 --- [restartedMain] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [templates/index.html]
+2021-01-04 20:58:23.513  INFO 15828 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2021-01-04 20:58:23.705  INFO 15828 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-04 20:58:23.767  INFO 15828 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-01-04 20:58:23.850  INFO 15828 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2021-01-04 20:58:23.857  INFO 15828 --- [restartedMain] c.s.SpringBootTemplateApplication        : Started SpringBootTemplateApplication in 5.434 seconds (JVM running for 7.961)
+2021-03-16 11:55:35.224  INFO 29188 --- [restartedMain] c.s.SpringBootTemplateApplication        : Starting SpringBootTemplateApplication on L-R90MPVPV-1534 with PID 29188 (D:\IDEA\MyProjrct\SpringBootTemplate\target\classes started by 唐涛 in D:\IDEA\MyProjrct\SpringBootTemplate)
+2021-03-16 11:55:35.243  INFO 29188 --- [restartedMain] c.s.SpringBootTemplateApplication        : No active profile set, falling back to default profiles: default
+2021-03-16 11:55:35.847  INFO 29188 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d2434f5: startup date [Tue Mar 16 11:55:35 CST 2021]; root of context hierarchy
+2021-03-16 11:55:38.854  INFO 29188 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2021-03-16 11:55:38.871  INFO 29188 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-16 11:55:38.875  INFO 29188 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.27
+2021-03-16 11:55:39.077  INFO 29188 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-16 11:55:39.077  INFO 29188 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 3230 ms
+2021-03-16 11:55:39.443  INFO 29188 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-03-16 11:55:39.449  INFO 29188 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-03-16 11:55:39.449  INFO 29188 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-03-16 11:55:39.450  INFO 29188 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-03-16 11:55:39.450  INFO 29188 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2021-03-16 11:55:40.360  INFO 29188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d2434f5: startup date [Tue Mar 16 11:55:35 CST 2021]; root of context hierarchy
+2021-03-16 11:55:40.432  INFO 29188 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addInterceptors(InterceptorRegistry))
+2021-03-16 11:55:40.488  INFO 29188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findAllUser2]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser2(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-16 11:55:40.491  INFO 29188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-16 11:55:40.492  INFO 29188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/userResponseBody]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser1(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-16 11:55:40.501  INFO 29188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-03-16 11:55:40.502  INFO 29188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-16 11:55:40.566  INFO 29188 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addViewControllers(ViewControllerRegistry))
+2021-03-16 11:55:40.599  INFO 29188 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-16 11:55:40.600  INFO 29188 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/userinfo] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-16 11:55:40.648  INFO 29188 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-16 11:55:40.648  INFO 29188 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-16 11:55:40.753  INFO 29188 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-16 11:55:40.970  WARN 29188 --- [restartedMain] o.t.t.TemplateMode                       : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-03-16 11:55:41.554  INFO 29188 --- [restartedMain] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [templates/index.html]
+2021-03-16 11:55:41.807  INFO 29188 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2021-03-16 11:55:42.077  INFO 29188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-16 11:55:42.146  INFO 29188 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-03-16 11:55:42.231  INFO 29188 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2021-03-16 11:55:42.237  INFO 29188 --- [restartedMain] c.s.SpringBootTemplateApplication        : Started SpringBootTemplateApplication in 8.191 seconds (JVM running for 11.839)
+2021-03-16 11:56:13.678  INFO 29188 --- [http-nio-8082-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-16 11:56:13.678  INFO 29188 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2021-03-16 11:56:13.741  INFO 29188 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 62 ms
+2021-03-16 11:56:26.853  INFO 29188 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser(HttpServletRequest,HttpServletResponse))
+2021-03-16 11:56:26.854  INFO 29188 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:16:54.719  INFO 8612 --- [restartedMain] c.s.SpringBootTemplateApplication        : Starting SpringBootTemplateApplication on L-R90MPVPV-1534 with PID 8612 (D:\IDEA\MyProjrct\SpringBootTemplate\target\classes started by 唐涛 in D:\IDEA\MyProjrct\SpringBootTemplate)
+2021-03-18 18:16:54.728  INFO 8612 --- [restartedMain] c.s.SpringBootTemplateApplication        : No active profile set, falling back to default profiles: default
+2021-03-18 18:16:55.301  INFO 8612 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@768c8bc3: startup date [Thu Mar 18 18:16:55 CST 2021]; root of context hierarchy
+2021-03-18 18:16:59.667  INFO 8612 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2021-03-18 18:16:59.689  INFO 8612 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-18 18:16:59.692  INFO 8612 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.27
+2021-03-18 18:17:00.074  INFO 8612 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-18 18:17:00.075  INFO 8612 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 4774 ms
+2021-03-18 18:17:01.051  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-03-18 18:17:01.059  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-03-18 18:17:01.060  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-03-18 18:17:01.061  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-03-18 18:17:01.061  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2021-03-18 18:17:02.548  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@768c8bc3: startup date [Thu Mar 18 18:16:55 CST 2021]; root of context hierarchy
+2021-03-18 18:17:02.646  INFO 8612 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addInterceptors(InterceptorRegistry))
+2021-03-18 18:17:02.708  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:02.710  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findAllUser2]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser2(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:02.710  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/userResponseBody]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser1(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:02.716  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-03-18 18:17:02.717  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:02.780  INFO 8612 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addViewControllers(ViewControllerRegistry))
+2021-03-18 18:17:02.802  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-18 18:17:02.803  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/userinfo] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-18 18:17:02.848  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:17:02.849  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:17:02.978  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:17:03.141  WARN 8612 --- [restartedMain] o.t.t.TemplateMode                       : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-03-18 18:17:03.763  INFO 8612 --- [restartedMain] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [templates/index.html]
+2021-03-18 18:17:03.981  INFO 8612 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2021-03-18 18:17:04.247  INFO 8612 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-18 18:17:04.339  INFO 8612 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-03-18 18:17:04.428  INFO 8612 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2021-03-18 18:17:04.436  INFO 8612 --- [restartedMain] c.s.SpringBootTemplateApplication        : Started SpringBootTemplateApplication in 10.746 seconds (JVM running for 14.601)
+2021-03-18 18:17:21.988  INFO 8612 --- [http-nio-8082-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-18 18:17:21.989  INFO 8612 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2021-03-18 18:17:22.058  INFO 8612 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 69 ms
+2021-03-18 18:17:22.102  INFO 8612 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:17:22.102  INFO 8612 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:17:54.122  INFO 8612 --- [Thread-24] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@768c8bc3: startup date [Thu Mar 18 18:16:55 CST 2021]; root of context hierarchy
+2021-03-18 18:17:54.168  INFO 8612 --- [Thread-24] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2021-03-18 18:17:55.508  INFO 8612 --- [restartedMain] c.s.SpringBootTemplateApplication        : Starting SpringBootTemplateApplication on L-R90MPVPV-1534 with PID 8612 (D:\IDEA\MyProjrct\SpringBootTemplate\target\classes started by 唐涛 in D:\IDEA\MyProjrct\SpringBootTemplate)
+2021-03-18 18:17:55.510  INFO 8612 --- [restartedMain] c.s.SpringBootTemplateApplication        : No active profile set, falling back to default profiles: default
+2021-03-18 18:17:55.518  INFO 8612 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47d50c62: startup date [Thu Mar 18 18:17:55 CST 2021]; root of context hierarchy
+2021-03-18 18:17:56.812  INFO 8612 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2021-03-18 18:17:56.814  INFO 8612 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-18 18:17:56.814  INFO 8612 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.27
+2021-03-18 18:17:56.886  INFO 8612 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-18 18:17:56.887  INFO 8612 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 1369 ms
+2021-03-18 18:17:57.027  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-03-18 18:17:57.028  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-03-18 18:17:57.029  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-03-18 18:17:57.029  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-03-18 18:17:57.030  INFO 8612 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2021-03-18 18:17:57.753  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47d50c62: startup date [Thu Mar 18 18:17:55 CST 2021]; root of context hierarchy
+2021-03-18 18:17:57.780  INFO 8612 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addInterceptors(InterceptorRegistry))
+2021-03-18 18:17:57.792  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:57.793  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findAllUser2]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser2(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:57.793  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/userResponseBody]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser1(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:57.797  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-03-18 18:17:57.799  INFO 8612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:17:57.844  INFO 8612 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addViewControllers(ViewControllerRegistry))
+2021-03-18 18:17:57.848  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-18 18:17:57.849  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/userinfo] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-18 18:17:57.865  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:17:57.867  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:17:57.938  INFO 8612 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:17:58.039  WARN 8612 --- [restartedMain] o.t.t.TemplateMode                       : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-03-18 18:17:58.151  INFO 8612 --- [restartedMain] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [templates/index.html]
+2021-03-18 18:17:58.267  INFO 8612 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2021-03-18 18:17:58.451  INFO 8612 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-18 18:17:58.532  INFO 8612 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-03-18 18:17:58.560  INFO 8612 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2021-03-18 18:17:58.565  INFO 8612 --- [restartedMain] c.s.SpringBootTemplateApplication        : Started SpringBootTemplateApplication in 3.192 seconds (JVM running for 68.73)
+2021-03-18 18:17:58.588  INFO 8612 --- [http-nio-8082-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-18 18:17:58.588  INFO 8612 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2021-03-18 18:17:58.599  INFO 8612 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2021-03-18 18:17:58.601  INFO 8612 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:17:58.602  INFO 8612 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:18:02.850  INFO 8612 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:18:02.851  INFO 8612 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:18:04.679  INFO 8612 --- [http-nio-8082-exec-8] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:18:04.679  INFO 8612 --- [http-nio-8082-exec-8] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:18:06.055  INFO 8612 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:18:06.056  INFO 8612 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:21:24.839  INFO 19992 --- [restartedMain] c.s.SpringBootTemplateApplication        : Starting SpringBootTemplateApplication on L-R90MPVPV-1534 with PID 19992 (D:\IDEA\MyProjrct\SpringBootTemplate\target\classes started by 唐涛 in D:\IDEA\MyProjrct\SpringBootTemplate)
+2021-03-18 18:21:24.860  INFO 19992 --- [restartedMain] c.s.SpringBootTemplateApplication        : No active profile set, falling back to default profiles: default
+2021-03-18 18:21:25.604  INFO 19992 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ebd6bd: startup date [Thu Mar 18 18:21:25 CST 2021]; root of context hierarchy
+2021-03-18 18:21:30.635  INFO 19992 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2021-03-18 18:21:30.659  INFO 19992 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-18 18:21:30.661  INFO 19992 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.27
+2021-03-18 18:21:31.032  INFO 19992 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-18 18:21:31.032  INFO 19992 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 5428 ms
+2021-03-18 18:21:31.391  INFO 19992 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-03-18 18:21:31.396  INFO 19992 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-03-18 18:21:31.397  INFO 19992 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-03-18 18:21:31.397  INFO 19992 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-03-18 18:21:31.398  INFO 19992 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2021-03-18 18:21:32.470  INFO 19992 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ebd6bd: startup date [Thu Mar 18 18:21:25 CST 2021]; root of context hierarchy
+2021-03-18 18:21:32.532  INFO 19992 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addInterceptors(InterceptorRegistry))
+2021-03-18 18:21:32.570  INFO 19992 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findAllUser2]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser2(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.InterruptedException
+2021-03-18 18:21:32.572  INFO 19992 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:21:32.572  INFO 19992 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/userResponseBody]}" onto public java.lang.String com.springboottemplate.controller.UserController.findAllUser1(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:21:32.577  INFO 19992 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-03-18 18:21:32.577  INFO 19992 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-18 18:21:32.609  INFO 19992 --- [restartedMain] c.s.a.LogTestAop                         : execution(void com.springboottemplate.controller.PageController.addViewControllers(ViewControllerRegistry))
+2021-03-18 18:21:32.621  INFO 19992 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-18 18:21:32.621  INFO 19992 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/userinfo] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2021-03-18 18:21:32.644  INFO 19992 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:21:32.644  INFO 19992 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:21:32.724  INFO 19992 --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-18 18:21:32.857  WARN 19992 --- [restartedMain] o.t.t.TemplateMode                       : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-03-18 18:21:33.529  INFO 19992 --- [restartedMain] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [templates/index.html]
+2021-03-18 18:21:33.789  INFO 19992 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2021-03-18 18:21:34.062  INFO 19992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-18 18:21:34.135  INFO 19992 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-03-18 18:21:34.248  INFO 19992 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2021-03-18 18:21:34.257  INFO 19992 --- [restartedMain] c.s.SpringBootTemplateApplication        : Started SpringBootTemplateApplication in 10.628 seconds (JVM running for 16.877)
+2021-03-18 18:21:38.416  INFO 19992 --- [http-nio-8082-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-18 18:21:38.417  INFO 19992 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2021-03-18 18:21:38.466  INFO 19992 --- [http-nio-8082-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 49 ms
+2021-03-18 18:21:38.514  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:21:38.514  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:21:43.302  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:21:43.302  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:16.391  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:16.392  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:17.047  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:17.047  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:30.600  INFO 19992 --- [http-nio-8082-exec-5] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:30.601  INFO 19992 --- [http-nio-8082-exec-5] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:44.345  INFO 19992 --- [http-nio-8082-exec-4] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:44.346  INFO 19992 --- [http-nio-8082-exec-4] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:48.111  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:48.112  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:50.251  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:50.251  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:52.118  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:52.118  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:53.042  INFO 19992 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:53.042  INFO 19992 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:53.754  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:53.755  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:54.382  INFO 19992 --- [http-nio-8082-exec-6] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:54.382  INFO 19992 --- [http-nio-8082-exec-6] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:56.858  INFO 19992 --- [http-nio-8082-exec-8] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:56.858  INFO 19992 --- [http-nio-8082-exec-8] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:57.400  INFO 19992 --- [http-nio-8082-exec-7] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:57.400  INFO 19992 --- [http-nio-8082-exec-7] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:57.891  INFO 19992 --- [http-nio-8082-exec-4] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:57.892  INFO 19992 --- [http-nio-8082-exec-4] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:58.374  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:58.374  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:58.863  INFO 19992 --- [http-nio-8082-exec-5] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:58.863  INFO 19992 --- [http-nio-8082-exec-5] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:59.320  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:59.320  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:22:59.761  INFO 19992 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:22:59.761  INFO 19992 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:00.243  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:00.243  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:00.838  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:00.839  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:04.160  INFO 19992 --- [http-nio-8082-exec-7] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:04.160  INFO 19992 --- [http-nio-8082-exec-7] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:05.128  INFO 19992 --- [http-nio-8082-exec-4] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:05.128  INFO 19992 --- [http-nio-8082-exec-4] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:05.702  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:05.703  INFO 19992 --- [http-nio-8082-exec-2] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:06.668  INFO 19992 --- [http-nio-8082-exec-5] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:06.668  INFO 19992 --- [http-nio-8082-exec-5] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:07.130  INFO 19992 --- [http-nio-8082-exec-8] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:07.130  INFO 19992 --- [http-nio-8082-exec-8] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:07.791  INFO 19992 --- [http-nio-8082-exec-6] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:07.792  INFO 19992 --- [http-nio-8082-exec-6] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:08.245  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:08.245  INFO 19992 --- [http-nio-8082-exec-10] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:08.630  INFO 19992 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:08.630  INFO 19992 --- [http-nio-8082-exec-3] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:09.062  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:09.062  INFO 19992 --- [http-nio-8082-exec-1] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2
+2021-03-18 18:23:09.469  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : execution(String com.springboottemplate.controller.UserController.findAllUser2(HttpServletRequest,HttpServletResponse))
+2021-03-18 18:23:09.470  INFO 19992 --- [http-nio-8082-exec-9] c.s.a.LogTestAop                         : 注解LogTestAnno生效了，生效类名：UserController  方法名：findAllUser2  注解得值:映射得url：findAllUser2

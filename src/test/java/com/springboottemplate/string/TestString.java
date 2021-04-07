@@ -19,6 +19,28 @@ import org.junit.Test;
  */
 public class TestString {
 
+	/**
+	 * 静态方法是可以调用普通方法的，前提是需要初始化对象调用。直接调用会报错
+	 * 非static修饰的方法或者变量如果不创建对象实例想要直接像static修饰的一样直接调用是会报错的。
+	 *
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		byte a=127;
+		long b=1128111111111111111L;
+		TestString testString=new TestString();
+		String name="张三";
+		testString.soutValue(name);
+		System.out.println(name);
+		//soutValue(name);直接调用不行
+
+	}
+
+	public void  soutValue(String name){
+		name="xxxxx";
+		System.out.println(name);
+	}
+
 
 	/**
 	 **

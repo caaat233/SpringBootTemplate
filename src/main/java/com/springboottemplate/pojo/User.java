@@ -119,6 +119,14 @@ public class User {
 		this.state = state;
 		this.statePhoto = statePhoto;
 	}
+
+	public User(String id, String name,String password ) {
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+	}
+
 	public User() {
 	}
 	@Override

@@ -14,15 +14,29 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springboottemplate.service.UserService;
 
+import java.util.concurrent.Executor;
+
 @Controller
 public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	Executor executor;
+	public static  final  ThreadLocal<String> threadLocal=new ThreadLocal();
+
 	@RequestMapping("user")
 	public String findAllUser(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("userList", userService.findAll());
 		// 设置了转发的前缀后缀了已经，直接写这个页面即可
+		for (int i = 1; i <= 10; i++) {
+			executor.execute(new Runnable() {
+				@Override
+				public void run() {
+
+				}
+			});
+		}
 		return "list";
 	}
 
@@ -43,9 +57,10 @@ public class UserController {
 	@LogTestAnno(name="映射得url：findAllUser2")
 	@RequestMapping("findAllUser2")
 	@ResponseBody
-	public String findAllUser2(HttpServletRequest request, HttpServletResponse response) {
-
+	public String findAllUser2(HttpServletRequest request, HttpServletResponse response) throws InterruptedException {
+		threadLocal.set("张三"+Math.random());
 		request.setAttribute("userList", userService.findAll());
+		Thread.sleep(5000);
 		User user=new User();
 		user.setArea("qqq");
 		user.setName("张三");

@@ -1,6 +1,7 @@
 package com.springboottemplate.string;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.regex.Pattern;
 
 import org.junit.Test;
@@ -8,15 +9,33 @@ import org.junit.Test;
 public class TestDouble {
 
 
+    /***
+     * BigDecimal  保留两位小数
+     */
+    @Test
+    public void test11() {
 
+    }
 
 
     //一个字符串是不是整数、浮点数、不能为负数
     @Test
     public void test10() {
 
-        BigDecimal bigDecimal=new BigDecimal("1a");
-        System.out.println(bigDecimal.toString());
+        DecimalFormat df = new DecimalFormat("#0.00");
+
+        String format = df.format(2.657);
+        System.out.println(df.format(0.2));// 0.20
+        System.out.println(df.format(26.236));// 0.20
+        System.out.println(df.format(45.211));// 0.20
+        double result = new BigDecimal(2.657).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        double result2 = new BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        System.out.println(result);
+        System.out.println(result2);
+        BigDecimal bigDecimal=new BigDecimal(20555.6666);
+        System.out.println(bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println(bigDecimal);
+
     }
 
 

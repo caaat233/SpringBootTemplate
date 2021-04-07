@@ -142,8 +142,15 @@
             <version>1.2.73</version>
             <scope>compile</scope>
         </dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>25.1-jre</version>
+		</dependency>
 
-    </dependencies>
+
+	</dependencies>
 
 
 

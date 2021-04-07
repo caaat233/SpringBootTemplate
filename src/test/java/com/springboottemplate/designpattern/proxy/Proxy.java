@@ -18,3 +18,4 @@ public class Proxy implements Network {// 代理上网
 	}
 
 }
+

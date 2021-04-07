@@ -3,10 +3,26 @@ package com.springboottemplate.string;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class StringIsEqTest {
 	String RESURT_GS_SWJGDM = "16201000000,16201050000,16202000000,16203000000,16204000000,16205000000,16221000000,16222000000,16223000000,16224000000,16226000000,16227000000,16228000000,16229000000,16230000000,16295000000,16298000000";
+
+
+	@Test
+	public void test11() {
+		//保留两位小数
+		//String injectionPointAddressIds="1,2,3,4,5";
+		String injectionPointAddressIds=null;
+		HashSet<String> strings=null;
+		if (Optional.ofNullable(injectionPointAddressIds).isPresent()){
+			strings= com.google.common.collect.Sets.newHashSet(injectionPointAddressIds.split(","));
+		}
+		System.out.println(strings);
+
+	}
 
 	@Test
 	public void test10() {

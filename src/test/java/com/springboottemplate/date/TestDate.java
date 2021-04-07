@@ -130,4 +130,20 @@ public class TestDate {
 		System.out.println(str);
 	}
 
+	/**
+	 * 时间戳转换成时间
+	 */
+	@Test
+	public void test12(){
+	//	Long timeStamp = System.currentTimeMillis();  //获取当前时间戳
+		System.out.println(System.currentTimeMillis());
+		Long timeStamp=1616639934330L;
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String sd = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp))));      // 时间戳转换成时间
+		System.out.println("格式化结果：" + sd);
+		String date="2021-03-26";
+		System.out.println(new Date(date).getTime());
+
+	}
+
 }

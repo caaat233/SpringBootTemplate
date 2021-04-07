@@ -10,6 +10,20 @@ import java.util.Map;
 import org.junit.Test;
 
 public class StringLength {
+
+	@Test
+	public void test5() throws UnsupportedEncodingException {
+		int i1 = 5;
+		int i2 = 5;
+		int i3 = 5;
+		int i4 = 5;
+		System.out.println(i1++);//5
+		System.out.println(++i2);//6
+		System.out.println(i3--);//5
+		System.out.println(--i4);//4
+
+
+	}
 	@Test
 	public void test() throws UnsupportedEncodingException {
 
