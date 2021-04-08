@@ -54,6 +54,6 @@ public class PageController extends WebMvcConfigurerAdapter {
 //	            .allowedMethods("POST","GET")
 //	            .allowedOrigins("*");
 //	}
-
+	输出生产者信息
 
 }
