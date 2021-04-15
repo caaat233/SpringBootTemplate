@@ -1,6 +1,6 @@
-package cn.tang.web1;
+package com.springboottemplate;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

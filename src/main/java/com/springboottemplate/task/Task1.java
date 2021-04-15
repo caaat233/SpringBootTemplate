@@ -3,10 +3,7 @@ package com.springboottemplate.task;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import redis.clients.jedis.Jedis;
 
 /**
  * @Description:定时任务1
@@ -46,7 +43,7 @@ public class Task1 {
 	 * @param:
 	 * @return: void
 	 */
-	@Test
+
 	public void test2() {
 		List  items=new ArrayList<String>();
 	      // Lambda 表达式遍历（JDK 1.8）
@@ -56,7 +53,7 @@ public class Task1 {
         });
 	}
 
-	@Test
+
 	public void test3() {
 
 
