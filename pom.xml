@@ -140,6 +140,12 @@
 			<version>4.3.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.cainiao.global.lnp</groupId>
+			<artifactId>global-lnp-urc-client</artifactId>
+			<version>1.1.9-log-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 
 

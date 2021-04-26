@@ -7,4 +7,5 @@ import com.springboottemplate.pojo.User;
 public interface UserService {
 	public List<User> findAll();
 
+
 }
