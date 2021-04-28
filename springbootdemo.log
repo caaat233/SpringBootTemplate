@@ -5853,3 +5853,5 @@ See http://rocketmq.apache.org/docs/faq/ for further details.
 2021-04-26 11:48:20.553  INFO 24224 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 53 ms
 2021-04-26 11:48:20.588  INFO 24224 --- [http-nio-8082-exec-1] com.springboottemplate.aop.LogTestAop    : execution(String com.springboottemplate.controller.lock.LockController.getName())
 2021-04-26 11:48:25.628  INFO 24224 --- [http-nio-8082-exec-1] com.springboottemplate.aop.LogTestAop    : execution(String com.springboottemplate.controller.lock.LockController.getName())
+2021-04-26 13:11:12.791  INFO 24224 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[118.31.55.236:9876] result: true
+2021-04-26 13:11:14.479  INFO 24224 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[118.31.55.236:10911] result: true

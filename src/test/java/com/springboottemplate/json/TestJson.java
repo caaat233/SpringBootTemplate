@@ -2,6 +2,7 @@ package com.springboottemplate.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.springboottemplate.json.dto.UserDto;
 import org.aspectj.util.FileUtil;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
@@ -19,6 +20,45 @@ import java.util.Map;
  * @create: 2020-07-08 10:12
  **/
 public class TestJson {
+
+    /**
+     * 测试jsonutil 把字符串转换成复杂对象
+     */
+    @Test
+    public void test5() throws IOException {
+//    String json = "\n" +
+//                "{\n" +
+//                "\"creator\": \"SORTATION_10006099\",\n" +
+//                "\"feature\": {\n" +
+//                "\"functionName\": \"222222\",\n" +
+//                "\"excludeWHCode\": \"11111\"\n" +
+//                "},\n" +
+//                "\"modifier\": \"张三\",\n" +
+//                "\"remark\": \"备注\"\n" +
+//                "}";
+
+        String  json="\n" +
+                "{\n" +
+                "\"creator\": \"SORTATION_10006099\",\n" +
+                "\"modifier\": \"张三\",\n" +
+                "\"remark\": \"备注\"\n" +
+                "}";
+        UserDto userDto = JSON.parseObject(json, UserDto.class);
+        System.out.println(JSON.toJSONString(userDto));
+
+        UserDto userDto1=new UserDto();
+        Map<String,String> map=new HashMap<>();
+        map.put("excludeWHCode","11111");
+        map.put("functionName","222222");
+        userDto1.setFeature(map);
+        userDto1.setCreator("SORTATION_10006099");
+        userDto1.setModifier("张三");
+        userDto1.setRemark("备注");
+        System.out.println(JSON.toJSONString(userDto1));
+
+
+    }
+
 
     /**
      * 测试一下字符串转jsonObeject
@@ -81,105 +121,105 @@ public class TestJson {
     @Test
     public void test() {
         String s = "{\n" +
-                "\t\"rsj2XY710Request\": {\n" +
-                "\t\t\"fhndText\": \"2020\",\n" +
-                "\t\t\"xyjf\": \"12\",\n" +
-                "\t\t\"yydm\": \"2\",\n" +
-                "\t\t\"data\": {\n" +
-                "\t\t\t\"title\": \"申请原因\",\n" +
-                "\t\t\t\"name\": \"yydm\",\n" +
-                "\t\t\t\"value\": \"\",\n" +
-                "\t\t\t\"type\": \"select\",\n" +
-                "\t\t\t\"validate\": {\n" +
-                "\t\t\t\t\"required\": true\n" +
-                "\t\t\t},\n" +
-                "\t\t\t\"disabled\": false,\n" +
-                "\t\t\t\"dataSet\": [{\n" +
-                "\t\t\t\t\"ID\": \"\",\n" +
-                "\t\t\t\t\"MC\": \"\"\n" +
-                "\t\t\t},\n" +
-                "\t\t\t{\n" +
-                "\t\t\t\t\"ID\": \"1\",\n" +
-                "\t\t\t\t\"MC\": \"对积分事项有异议\"\n" +
-                "\t\t\t},\n" +
-                "\t\t\t{\n" +
-                "\t\t\t\t\"ID\": \"2\",\n" +
-                "\t\t\t\t\"MC\": \"其他\"\n" +
-                "\t\t\t}],\n" +
-                "\t\t\t\"extraDisabled\": false\n" +
-                "\t\t},\n" +
-                "\t\t\"getValidator\": {\n" +
-                "\t\t\t\"flag\": true,\n" +
-                "\t\t\t\"tip\": \"\"\n" +
-                "\t\t},\n" +
-                "\t\t\"xxqksm\": \"XXXXX\",\n" +
-                "\t\t\"zgswjg\": \"原河北省无极县国家税务局稽查局局长室\",\n" +
-                "\t\t\"shxydm\": \"930322320223009XYDM\",\n" +
-                "\t\t\"sszyfwjgmc\": \"秦皇岛朗税务师事务所有限公司(09)\",\n" +
-                "\t\t\"fhnd\": \"2020\",\n" +
-                "\t\t\"jbrText\": \"刘强\",\n" +
-                "\t\t\"jbr\": \"13113113113\",\n" +
-                "\t\t\"yydmText\": \"其他\",\n" +
-                "\t\t\"xwlist\": [],\n" +
-                "\t\t\"key\": \"xxqksm\",\n" +
-                "\t\t\"jbrdh\": \"13113113113\"\n" +
-                "\t},\n" +
-                "\t\"formData\": {\n" +
-                "\t\t\"fhndText\": \"2020\",\n" +
-                "\t\t\"xyjf\": \"12\",\n" +
-                "\t\t\"yydm\": \"2\",\n" +
-                "\t\t\"data\": {\n" +
-                "\t\t\t\"title\": \"申请原因\",\n" +
-                "\t\t\t\"name\": \"yydm\",\n" +
-                "\t\t\t\"value\": \"\",\n" +
-                "\t\t\t\"type\": \"select\",\n" +
-                "\t\t\t\"validate\": {\n" +
-                "\t\t\t\t\"required\": true\n" +
-                "\t\t\t},\n" +
-                "\t\t\t\"disabled\": false,\n" +
-                "\t\t\t\"dataSet\": [{\n" +
-                "\t\t\t\t\"ID\": \"\",\n" +
-                "\t\t\t\t\"MC\": \"\"\n" +
-                "\t\t\t},\n" +
-                "\t\t\t{\n" +
-                "\t\t\t\t\"ID\": \"1\",\n" +
-                "\t\t\t\t\"MC\": \"对积分事项有异议\"\n" +
-                "\t\t\t},\n" +
-                "\t\t\t{\n" +
-                "\t\t\t\t\"ID\": \"2\",\n" +
-                "\t\t\t\t\"MC\": \"其他\"\n" +
-                "\t\t\t}],\n" +
-                "\t\t\t\"extraDisabled\": false\n" +
-                "\t\t},\n" +
-                "\t\t\"getValidator\": {\n" +
-                "\t\t\t\"flag\": true,\n" +
-                "\t\t\t\"tip\": \"\"\n" +
-                "\t\t},\n" +
-                "\t\t\"xxqksm\": \"\",\n" +
-                "\t\t\"zgswjg\": \"原河北省无极县国家税务局稽查局局长室\",\n" +
-                "\t\t\"shxydm\": \"930322320223009XYDM\",\n" +
-                "\t\t\"sszyfwjgmc\": \"秦皇岛朗税务师事务所有限公司(09)\",\n" +
-                "\t\t\"fhnd\": \"2020\",\n" +
-                "\t\t\"jbrText\": \"刘强\",\n" +
-                "\t\t\"jbr\": \"13113113113\",\n" +
-                "\t\t\"yydmText\": \"其他\",\n" +
-                "\t\t\"key\": \"yydm\",\n" +
-                "\t\t\"jbrdh\": \"13113113113\"\n" +
-                "\t},\n" +
-                "\t\"formDataQt\": {\n" +
-                "\t\t\"getValidator\": {\n" +
-                "\t\t\t\"flag\": true,\n" +
-                "\t\t\t\"tip\": \"\"\n" +
-                "\t\t},\n" +
-                "\t\t\"xxqksm\": \"XXXXX\",\n" +
-                "\t\t\"key\": \"xxqksm\"\n" +
-                "\t},\n" +
-                "\t\"fbzlRequestParaVOs\": [{\n" +
-                "\t\t\"swsxMxDmList\": [],\n" +
-                "\t\t\"swsxDm\": \"500019\"\n" +
-                "\t}],\n" +
-                "\t\"blxx\": \"{\\\"slswjgMc\\\":\\\"国家税务总局新疆维吾尔自治区税务局\\\",\\\"slswjgDm\\\":\\\"16500000000\\\",\\\"slrDm\\\":\\\"Administrator\\\",\\\"slrq\\\":\\\"2020-06-17\\\"}\",\n" +
-                "\t\"sqfhxwjllbDataSource\": []\n" +
+                "\"rsj2XY710Request\": {\n" +
+                "\"fhndText\": \"2020\",\n" +
+                "\"xyjf\": \"12\",\n" +
+                "\"yydm\": \"2\",\n" +
+                "\"data\": {\n" +
+                "\"title\": \"申请原因\",\n" +
+                "\"name\": \"yydm\",\n" +
+                "\"value\": \"\",\n" +
+                "\"type\": \"select\",\n" +
+                "\"validate\": {\n" +
+                "\"required\": true\n" +
+                "},\n" +
+                "\"disabled\": false,\n" +
+                "\"dataSet\": [{\n" +
+                "\"ID\": \"\",\n" +
+                "\"MC\": \"\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"ID\": \"1\",\n" +
+                "\"MC\": \"对积分事项有异议\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"ID\": \"2\",\n" +
+                "\"MC\": \"其他\"\n" +
+                "}],\n" +
+                "\"extraDisabled\": false\n" +
+                "},\n" +
+                "\"getValidator\": {\n" +
+                "\"flag\": true,\n" +
+                "\"tip\": \"\"\n" +
+                "},\n" +
+                "\"xxqksm\": \"XXXXX\",\n" +
+                "\"zgswjg\": \"原河北省无极县国家税务局稽查局局长室\",\n" +
+                "\"shxydm\": \"930322320223009XYDM\",\n" +
+                "\"sszyfwjgmc\": \"秦皇岛朗税务师事务所有限公司(09)\",\n" +
+                "\"fhnd\": \"2020\",\n" +
+                "\"jbrText\": \"刘强\",\n" +
+                "\"jbr\": \"13113113113\",\n" +
+                "\"yydmText\": \"其他\",\n" +
+                "\"xwlist\": [],\n" +
+                "\"key\": \"xxqksm\",\n" +
+                "\"jbrdh\": \"13113113113\"\n" +
+                "},\n" +
+                "\"formData\": {\n" +
+                "\"fhndText\": \"2020\",\n" +
+                "\"xyjf\": \"12\",\n" +
+                "\"yydm\": \"2\",\n" +
+                "\"data\": {\n" +
+                "\"title\": \"申请原因\",\n" +
+                "\"name\": \"yydm\",\n" +
+                "\"value\": \"\",\n" +
+                "\"type\": \"select\",\n" +
+                "\"validate\": {\n" +
+                "\"required\": true\n" +
+                "},\n" +
+                "\"disabled\": false,\n" +
+                "\"dataSet\": [{\n" +
+                "\"ID\": \"\",\n" +
+                "\"MC\": \"\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"ID\": \"1\",\n" +
+                "\"MC\": \"对积分事项有异议\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"ID\": \"2\",\n" +
+                "\"MC\": \"其他\"\n" +
+                "}],\n" +
+                "\"extraDisabled\": false\n" +
+                "},\n" +
+                "\"getValidator\": {\n" +
+                "\"flag\": true,\n" +
+                "\"tip\": \"\"\n" +
+                "},\n" +
+                "\"xxqksm\": \"\",\n" +
+                "\"zgswjg\": \"原河北省无极县国家税务局稽查局局长室\",\n" +
+                "\"shxydm\": \"930322320223009XYDM\",\n" +
+                "\"sszyfwjgmc\": \"秦皇岛朗税务师事务所有限公司(09)\",\n" +
+                "\"fhnd\": \"2020\",\n" +
+                "\"jbrText\": \"刘强\",\n" +
+                "\"jbr\": \"13113113113\",\n" +
+                "\"yydmText\": \"其他\",\n" +
+                "\"key\": \"yydm\",\n" +
+                "\"jbrdh\": \"13113113113\"\n" +
+                "},\n" +
+                "\"formDataQt\": {\n" +
+                "\"getValidator\": {\n" +
+                "\"flag\": true,\n" +
+                "\"tip\": \"\"\n" +
+                "},\n" +
+                "\"xxqksm\": \"XXXXX\",\n" +
+                "\"key\": \"xxqksm\"\n" +
+                "},\n" +
+                "\"fbzlRequestParaVOs\": [{\n" +
+                "\"swsxMxDmList\": [],\n" +
+                "\"swsxDm\": \"500019\"\n" +
+                "}],\n" +
+                "\"blxx\": \"{\\\"slswjgMc\\\":\\\"国家税务总局新疆维吾尔自治区税务局\\\",\\\"slswjgDm\\\":\\\"16500000000\\\",\\\"slrDm\\\":\\\"Administrator\\\",\\\"slrq\\\":\\\"2020-06-17\\\"}\",\n" +
+                "\"sqfhxwjllbDataSource\": []\n" +
                 "}";
 
         Map<String, Object> map = (Map<String, Object>) JSONObject.parse(s);
