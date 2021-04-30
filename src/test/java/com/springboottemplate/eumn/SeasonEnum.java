@@ -7,7 +7,10 @@ package com.springboottemplate.eumn;
  */
 public enum SeasonEnum {
 
-    SPRING(1,"春"), SUMMER(2,"夏"), AUTUMN(3,"秋"), WINTER(4,"冬");
+    SPRING(1, "春"),
+    SUMMER(2, "夏"),
+    AUTUMN(3, "秋"),
+    WINTER(4, "冬");
 
     private int id;//自定义属性
 

@@ -48,6 +48,7 @@ public class ConstantTest {
                 break;
             case ConstantTest.PARTNER:
 
+                //必须要break，不然如果是for循环的话，会二次匹配
             case ConstantTest.CONTRACT:
 
             default:
