@@ -7,8 +7,9 @@ public class LazyDesign {
 	/*
 	 * 所谓懒汉式，就是在初始化的时候并不给该类对象赋值属性，为null.
 	 * 只用当调用该方法时，进行判断如果值为null,则新建一个内存对象赋值给该对象，返回该对象 否则则认为该对象以存在，返回原来的对象，确保对象的唯一性。
+	 * volatile 防止指令重排
 	 */
-	private static LazyDesign lazyDesign = null;
+	private  volatile static LazyDesign lazyDesign = null;
 
 	private LazyDesign() {
 
