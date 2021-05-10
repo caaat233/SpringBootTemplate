@@ -14,47 +14,22 @@ import java.util.stream.Collectors;
 public class lamdaTest {
 
 
+    /**
+     * lambda表达式用得最多的场合就是替代匿名内部类，而实现Runnable接口是匿名内部类的经典例子
+     */
     @Test
-    public void test1(){
-        String text = "test";
-        text="test change";
-        List<Integer> list = Arrays.asList(1,2);
-        List<Integer> list2 = new ArrayList<>();
-        //list.forEach();
-        list.forEach(value -> {
-            System.out.println(value);
-            list2.add(value);
-        });
+    public void InnerClassTest() {
+        new Thread(() -> System.out.println("It's a lambda function!")).start();
 
-
-
-    }
-
-    @Test
-    public void testFilter() {
-        List<User> list = createList();
-        //只留下满足条件的
-        List<User> collect = list.stream().filter(value -> StringUtils.equals(value.getId(), "1")).collect(Collectors.toList());
-        System.out.println(collect);
-        //转换成set
-        Set<User> collect1 = list.stream().filter(value -> StringUtils.equals(value.getId(), "1")).collect(Collectors.toSet());
-        System.out.println(collect1);
-        List<User> collect2 = list.stream().distinct().collect(Collectors.toList());
-        System.out.println(collect2);
-
-
-    }
-
-
-    public static List<User> createList() {
-
-        User user = new User("1", "", "");
-        User user1 = new User("2", "", "");
-        User user2 = new User("3", "", "");
-        User user3 = new User("3", "", "");
-        List<User> userList = Lists.newArrayList(user, user1, user2);
-        return userList;
-
+        /**
+         *等效于
+         */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("The old runable now is using!");
+            }
+        }).start();
     }
 
 }

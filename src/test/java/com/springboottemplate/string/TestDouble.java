@@ -9,13 +9,6 @@ import org.junit.Test;
 public class TestDouble {
 
 
-    /***
-     * BigDecimal  保留两位小数
-     */
-    @Test
-    public void test11() {
-
-    }
 
 
     //一个字符串是不是整数、浮点数、不能为负数
