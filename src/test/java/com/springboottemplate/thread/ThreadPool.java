@@ -31,12 +31,21 @@ import java.util.concurrent.*;
  * threadFactory :executor 创建新线程的时候会用到。
  * handler :饱和策略。关于饱和策略下面单独介绍一下。
  */
+
+/**
+ * CPU 密集型任务(N+1)： 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（CPU 核心数）+1，比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影响。一旦任务暂停，CPU 就会处于空闲状态，而在这种情况下多出来的一个线程就可以充分利用 CPU 的空闲时间。
+ * I/O 密集型任务(2N)： 这种任务应用起来，系统会用大部分的时间来处理 I/O 交互，而线程在处理 I/O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I/O 密集型任务的应用中，我们可以多配置一些线程，具体的计算方法是 2N。
+ * 如何判断是 CPU 密集任务还是 IO 密集任务？
+ *
+ * CPU 密集型简单理解就是利用 CPU 计算能力的任务比如你在内存中对大量数据进行排序。单凡涉及到网络读取，文件读取这类都是 IO 密集型，这类任务的特点是 CPU 计算耗费时间相比于等待 IO 操作完成的时间来说很少，大部分时间都花在了等待 IO 操作完成上。
+ */
 public class ThreadPool {
 
     private static final int CORE_POOL_SIZE = 5;
     private static final int MAX_POOL_SIZE = 10;
     private static final int QUEUE_CAPACITY = 100;
     private static final Long KEEP_ALIVE_TIME = 1L;
+
 
     /**
      * 使用阿里巴巴推荐的创建线程池的方式
@@ -74,7 +83,7 @@ public class ThreadPool {
             executor.execute(() -> {
                 System.out.println(Thread.currentThread().getName() + " Start. Time = " + new Date());
                 //假如你业务逻辑比较复杂的话，可以以新建一个类继承Runnable，把username对象传递进去，比如 new MyRunnable（Streing username）
-                System.out.println(Thread.currentThread().getName()+"   "+username);
+                System.out.println(Thread.currentThread().getName() + "   " + username);
                 System.out.println(Thread.currentThread().getName() + " End. Time = " + new Date());
             });
         }
@@ -85,6 +94,46 @@ public class ThreadPool {
 
     }
 
+
+    /**
+     * 使用callable方式实现上面的代码，但是Callable是有返回值的
+     */
+    @Test
+    public void testCallable() throws InterruptedException, ExecutionException {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+                CORE_POOL_SIZE,
+                MAX_POOL_SIZE,
+                KEEP_ALIVE_TIME,
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(QUEUE_CAPACITY),
+                new ThreadPoolExecutor.CallerRunsPolicy());
+
+        List<String> userNameList = new ArrayList<>();
+        userNameList.add("张三");
+        userNameList.add("李四");
+        userNameList.add("王五");
+        userNameList.add("小明");
+        userNameList.add("小红");
+        userNameList.add("校长");
+        List<Future<String>> futureList = new ArrayList<>();
+        for (String username : userNameList) {
+            futureList.add(executor.submit(() -> {
+                System.out.println(Thread.currentThread().getName() + " Start. Time = " + new Date());
+                //假如你业务逻辑比较复杂的话，可以以新建一个类继承Runnable，把username对象传递进去，比如 new MyRunnable（Streing username）
+                System.out.println(Thread.currentThread().getName() + "   " + username);
+                System.out.println(Thread.currentThread().getName() + " End. Time = " + new Date());
+                return username;
+            }));
+            Thread.sleep(1000);
+        }
+        for (Future<String> fut : futureList) {
+            System.out.println(new Date() + "::" + fut.get());
+        }
+        //终止线程池
+        executor.shutdown();
+        System.out.println("Finished all threads");
+
+    }
 
     /**
      * @param
