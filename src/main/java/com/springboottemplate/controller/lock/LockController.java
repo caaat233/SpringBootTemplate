@@ -24,6 +24,7 @@ public class LockController {
     /**
      * 可以看见，多个线程访问这个方法，锁是能生效的。可以看见不同线程执行时间间隔是五秒
      * 但是不知道为什么，他们的方法执行耗时都是5s，不计算锁的等待时间
+     *
      * @return
      * @throws InterruptedException
      */
@@ -37,6 +38,79 @@ public class LockController {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String date = sdf.format(new Date());
         return "执行时间为：" + date + "  执行耗时：" + String.valueOf(upTime);
+    }
+
+    @ResponseBody
+    @RequestMapping("lock/dealLock")
+    public String dealLock(int id) throws InterruptedException {
+
+        if (id == 1) {
+            synchronized (LockController.class) {
+                Thread.sleep(2000);
+                synchronized (Object.class) {
+                    System.out.println("执行完毕：" + id);
+                }
+            }
+
+        }
+        if (id == 2) {
+            synchronized (Object.class) {
+                Thread.sleep(2000);
+                synchronized (LockController.class) {
+                    System.out.println("执行完毕：" + id);
+                }
+            }
+        }
+        return String.valueOf(id);
+    }
+
+    /**
+     * 解决上面方法因为锁竞争导致死锁的问题
+     * @param id
+     * @return
+     * @throws InterruptedException
+     */
+    @ResponseBody
+    @RequestMapping("lock/reloveDealLock")
+    public String reloveDealLock(int id) throws InterruptedException {
+
+        if (id == 1) {
+            synchronized (LockController.class) {
+                Thread.sleep(2000);
+                int i;
+                for (i = 0; i <= 10; i++) {
+                    synchronized (Object.class) {
+                        System.out.println("执行完毕：" + id);
+                        break;
+                    }
+                }
+                if (i == 10) {
+                    //因为我锁的是类对象，必须指定哪个对象要wait的是哪个，this.wait这样写会报错
+                    LockController.class.wait();//因为我锁的是类对象，必须指定哪个对象要wait的是哪个，this.wait这样写会报错
+                }
+                LockController.class.notifyAll();
+            }
+
+        }
+        if (id == 2) {
+            synchronized (Object.class) {
+                Thread.sleep(2000);
+                int i;
+                for (i = 0; i <= 10; i++) {
+                    synchronized (LockController.class) {
+                        System.out.println("执行完毕：" + id);
+                        break;
+                    }
+                }
+                if (i == 10) {
+                    //因为我锁的是类对象，必须指定哪个对象要wait的是哪个，this.wait这样写会报错
+                    Object.class.wait();//因为我锁的是类对象，必须指定哪个对象要wait的是哪个，this.wait这样写会报错
+                }
+                Object.class.notifyAll();
+            }
+
+        }
+        return String.valueOf(id);
     }
 
 //    @ResponseBody

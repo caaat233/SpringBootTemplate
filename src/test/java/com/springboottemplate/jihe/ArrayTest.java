@@ -1,8 +1,7 @@
 package com.springboottemplate.jihe;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import org.junit.Test;
 
@@ -32,6 +31,8 @@ public class ArrayTest {
 		System.out.println(aa.substring(0,10));
 		String aaa="";
 		System.out.println(aaa.substring(0,10));//java.lang.StringIndexOutOfBoundsException: String index out of range: 10
+
+
 	}
 
 

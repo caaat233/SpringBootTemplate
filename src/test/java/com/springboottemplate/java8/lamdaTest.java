@@ -5,10 +5,7 @@ import com.springboottemplate.pojo.User;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class lamdaTest {
@@ -30,7 +27,25 @@ public class lamdaTest {
                 System.out.println("The old runable now is using!");
             }
         }).start();
+
+        /**
+         * 集合比较
+         */
+        List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+        int i = 1;
+        Collections.sort(names, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                //因为我这是lamda的写法，所以局部变量i不用声明为final依然能访问，但是i是不能修改的，他是隐式的final类型
+                System.out.println(names);
+                System.out.println(i);
+                return b.compareTo(a);
+            }
+        });
+        //lamda简写
+        Collections.sort(names, (a, b) -> a.compareTo(b));
     }
+
 
 }
 
