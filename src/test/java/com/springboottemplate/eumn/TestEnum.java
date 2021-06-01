@@ -9,7 +9,34 @@ import org.junit.Test;
  */
 public class TestEnum {
 
+    /**
+     * 测试AbilityNameEnum枚举类，根据枚举的key得到枚举值
+     */
+    @Test
+    public void  AbilityNameEnum(){
+        // 根据类型获取描述
+        String desc = AbilityNameEnum.getValue("bmw");
+        System.out.println("根据类型获取描述：" + desc);
+        String desc1 = AbilityNameEnum.getValue("Forward FM");
+        System.out.println("根据类型获取描述：" + desc1);
+        String desc2 = AbilityNameEnum.getValue("Forward LM");
+        System.out.println("根据类型获取描述：" + desc2);
 
+
+    }
+    /**
+     * 测试CarTypeEnum枚举类，根据枚举的key得到枚举值
+     */
+    @Test
+    public void  test3(){
+        // 根据类型获取描述
+        String desc = CarTypeEnum.getValue("bmw");
+        System.out.println("根据类型获取描述：" + desc);
+        // 根据描述获取类型
+        String type = CarTypeEnum.getType("宝马");
+        System.out.println("根据描述获取类型：" + type);
+
+    }
     /**
      * 测试OrderEum枚举类
      */
@@ -23,7 +50,6 @@ public class TestEnum {
         String NAME="READY";
         System.out.println(NAME==OrderEum.READY.getName());//false
         System.out.println(name.equals(OrderEum.READY.getName()));//true
-
 
     }
     /**

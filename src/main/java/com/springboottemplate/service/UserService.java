@@ -11,5 +11,4 @@ public interface UserService {
 
 	public List<Map>  findAllDB();
 
-
 }

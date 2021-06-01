@@ -9,6 +9,7 @@ import com.springboottemplate.pojo.User;
 @Mapper
 public interface UserMapper {
 
-	
 	public List<Map> findAll();
+
+
 }

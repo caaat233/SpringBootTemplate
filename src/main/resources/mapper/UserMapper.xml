@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.springboottemplate.mapper.UserMapper">
-	<select id="findAll" resultType="java.util.Map">
-		select * from user
+<mapper namespace="com.springboottemplate.mapper.TableTestMapper">
+    <select id="findAll" resultType="com.springboottemplate.pojo.TableTestDO">
+SELECT
+	id,
+	sid,
+	name,
+	sex,
+	age,
+	job,
+	phone,
+	birthday ,
+	birthday  AS birthdayTimestamp
+	,
+	date_format(birthday,'%Y-%m-%d %H:%i:%s')    AS birthdayTimestampFormatByMysql
+	,
+	birthday  AS birthdayTimestampFormatByJava
+FROM
+	tabletest
+WHERE
+	birthday IS NOT NULL;
 	</select>
 </mapper>

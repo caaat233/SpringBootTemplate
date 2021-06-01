@@ -57,4 +57,19 @@ public class PairTest {
         return null;
     }
 
+
+    @Test
+    public void test(Object param) {
+        if (param instanceof String && StringUtils.isBlank((CharSequence) param)) {
+            //如果param参数是个字符串
+
+        }
+        if (param instanceof Collection && CollectionUtils.isEmpty((Collection<?>) param)) {
+            //如果param参数是个集合
+        }
+        if (param instanceof Map && MapUtils.isEmpty((Map<?, ?>) param)) {
+            //如果param参数是个map
+        }
+    }
+
 }

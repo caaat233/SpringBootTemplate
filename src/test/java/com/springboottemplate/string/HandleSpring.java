@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 /**
@@ -86,6 +87,11 @@ public class HandleSpring {
 			String string = splitB[i];
 			System.out.println(string);
 		}
+		String fileComments= StringUtils.join("Resource file Downlod,fileId=",111);
+		String uploadFileId="12344";
+		uploadFileId = StringUtils.join(uploadFileId, "_","global-lnp-urcconsole");
+		System.out.println(fileComments);
+		System.out.println(uploadFileId);
 
 	}
 }

@@ -58,9 +58,7 @@ public class TestTryCatch {
 	}
 
 	String test3() {
-
 		throw new NullPointerException();
-
 	}
 
 	void test4() {
