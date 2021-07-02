@@ -53,6 +53,9 @@ public class ThreadPool {
      */
     @Test
     public void testThreadPoolExecutor() {
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        ExecutorService executorService1 = Executors.newSingleThreadExecutor();
+        ExecutorService executorService2 = Executors.newCachedThreadPool();
         ThreadPoolExecutor executor = new ThreadPoolExecutor(
                 CORE_POOL_SIZE,
                 MAX_POOL_SIZE,

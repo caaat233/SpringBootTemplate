@@ -2,7 +2,7 @@ package com.springboottemplate.designpattern.proxy;
 
 public class TestProxy {
     /**
-     * 这是静态代理
+     * 这是动态代理
      *
      * @param args
      */
@@ -23,7 +23,10 @@ public class TestProxy {
          *         );
          */
 
-        Network network1 = (Network) java.lang.reflect.Proxy.newProxyInstance(real.getClass().getClassLoader(), real.getClass().getInterfaces(), new NetWorkInvocationHandler(real));
+        Network network1 = (Network) java.lang.reflect.Proxy.newProxyInstance(
+                real.getClass().getClassLoader(),
+                real.getClass().getInterfaces(),
+                new NetWorkInvocationHandler(real));
         network1.browse();
     }
 

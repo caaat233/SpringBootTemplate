@@ -1,5 +1,8 @@
 package com.springboottemplate.designpattern.single;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /*
  * 懒汉式
  */
@@ -33,3 +36,7 @@ public class LazyDesign {
 		return lazyDesign;
 	}
 }
+
+
+
+

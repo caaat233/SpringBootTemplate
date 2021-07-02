@@ -1,5 +1,6 @@
 package com.springboottemplate.string;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 public class Stringformat {
@@ -21,5 +22,13 @@ public class Stringformat {
         System.out.println(a);
     }
 
+    /**
+     * 拼接字符串
+     */
+    @Test
+    public void format2() {
+        String redis = String.format("%s.%s%s","LAZADA_ID", 1234455,"_11");
+        System.out.println(redis);
+    }
 
 }

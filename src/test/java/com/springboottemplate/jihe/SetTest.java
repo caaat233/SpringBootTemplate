@@ -20,17 +20,28 @@ public class SetTest {
      */
 
     /**
-     * LinkedHashSet根据元素插入顺序排序？为什么直接用list=因为list可以重复
-     * TreeSet是根据元素的值大小排序， TreeSet就是 SortSet的实现
+     * LinkedHashSet根据元素插入顺序排序?但是元素依然是不能重复的
+     * 但是TreeSet是根据元素的值大小排序， TreeSet就是 SortSet的实现
      */
     @Test
     public void LinkedHashSet() {
+        //LinkedHashSet根据元素插入顺序排序
         LinkedHashSet dset = new LinkedHashSet<>();
         dset.add(5);
         dset.add(8);
         dset.add(4);
         dset.add(2);
-        System.out.println(dset.toString());
+        dset.add(2);
+        dset.add(null);
+        System.out.println(dset.toString() + "     " + dset.size());
+//但是TreeSet是根据元素的值大小排序
+        TreeSet treeSet = new TreeSet();
+        treeSet.add(5);
+        treeSet.add(8);
+        treeSet.add(4);
+        treeSet.add(2);
+        treeSet.add(2);
+        System.out.println(treeSet.toString());
     }
 
 
@@ -59,6 +70,7 @@ public class SetTest {
         treeSet.add("c");
         treeSet.add("b");
         treeSet.add("d");
+        treeSet.add(null);//放空报错
         System.out.println(treeSet.toString());
         treeSet.remove("c");
         System.out.println(treeSet.toString());

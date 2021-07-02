@@ -53,7 +53,8 @@ public class TestBigDecimal {
         BigDecimal num1 = new BigDecimal(0.005);
         BigDecimal num2 = new BigDecimal(1000000);
         BigDecimal num3 = new BigDecimal(-1000000);
-        //尽量用字符串的形式初始化
+        //尽量用字符串的形式初始化,如下
+       //  BigDecimal b = new BigDecimal(Double.toString(0.005));
         BigDecimal num12 = new BigDecimal("0.005");
         BigDecimal num22 = new BigDecimal("1000000");
         BigDecimal num32 = new BigDecimal("-1000000");

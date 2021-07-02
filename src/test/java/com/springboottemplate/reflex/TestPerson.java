@@ -8,7 +8,12 @@ import org.junit.Test;
 
 public class TestPerson {
     public static void main(String[] args) throws Exception {
-
+        //写代码熟悉反射
+        Class<Person> personClass = Person.class;
+        Person person = personClass.newInstance();
+        Method setName = personClass.getMethod("setName", String.class);
+        setName.invoke(person,"张三");
+        System.out.println(person.toString());//Person{name='张三', age=0}
     }
 
     @Test
@@ -17,11 +22,10 @@ public class TestPerson {
          * 三种获取，class文件的方式
          */
         Class clazz1 = Person.class;
-        Class clazz2 = Class.forName("reflex.Person");
+        Class clazz2 = Class.forName("com.springboottemplate.reflex.Person");
         Class clazz3 = new Person().getClass();
         Person p = (Person) clazz3.newInstance();// 默认的五重唱构造器
         p.setAge(1);
-
         p.setName("xxx");
     }
 

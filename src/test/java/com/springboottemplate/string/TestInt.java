@@ -26,9 +26,10 @@ public class TestInt {
         Integer integer2 = new Integer("100");
         Integer integer3 = new Integer("200");
         Integer integer4 = new Integer("200");
-        System.out.println(integer1 == integer2);//false
+        System.out.println(integer1 == integer2);//falsef
         System.out.println(integer3 == integer4);//false
         System.out.println(integer3.equals(integer4));//true
+        System.out.println(i==integer1);//true
         System.out.println("***************************************");
         Integer integer5 = 100;
         Integer integer6 = 100;

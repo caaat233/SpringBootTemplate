@@ -5,13 +5,14 @@ import java.util.Map;
 
 import com.springboottemplate.controller.UserController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.springboottemplate.mapper.UserMapper;
 import com.springboottemplate.pojo.User;
 import com.springboottemplate.service.UserService;
 
-@Service
+@Service("userService1")
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
