@@ -3,6 +3,7 @@ package com.springboottemplate.controller;
 import com.springboottemplate.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +17,16 @@ import java.util.List;
 @RequestMapping("jvm")
 public class JVMController {
 
+    @ResponseBody
     @RequestMapping("oom")
     public void oom() {
         List<User> list = new ArrayList<User>();
         int i = 1;
-        while (i < 10000) {
+        while (true) {
             i++;
             list.add(new User());
+            if (i%10==0) {
+            }
         }
     }
 

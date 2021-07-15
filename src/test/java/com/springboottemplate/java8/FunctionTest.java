@@ -24,13 +24,14 @@ public class FunctionTest {
     public void test() {
 
         testFunction("张三", (string) -> {
+            System.out.println("*******2*********");
             List list = modifyString(string);
             return list;
         });
     }
 
     public void testFunction(String name, Function<String, List<T>> getList) {
-        System.out.println("****************");
+        System.out.println("*******1*********");
         /**
          * 1、执行  getList.apply(name)
          * 相当于
@@ -53,6 +54,7 @@ public class FunctionTest {
 
 
     public List modifyString(String a) {
+        System.out.println("*******3*********");
         ArrayList objects = new ArrayList<>();
         objects.add("lisi");
         objects.add(a);

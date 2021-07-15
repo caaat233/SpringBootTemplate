@@ -28,5 +28,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.findAll();
     }
 
+    @Override
+    public Map findOne(int id) {
+        return userMapper.findOne(id);
+    }
+
 
 }

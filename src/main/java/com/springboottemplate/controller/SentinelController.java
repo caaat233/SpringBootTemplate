@@ -41,4 +41,12 @@ public class SentinelController {
         return userService.findAllDB();
     }
 
+    @SentinelResource("findOne")
+    @RequestMapping("findOne")
+    @ResponseBody
+    public Map testfindOne(int id) {
+        return userService.findOne(id);
+    }
+
+
 }

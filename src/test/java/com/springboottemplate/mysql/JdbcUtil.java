@@ -23,7 +23,6 @@ public class JdbcUtil {
     private static String password;
     private static Properties properties = new Properties();
 
-    @Test
     public static Connection getConnection() throws SQLException {
         Connection conn = null;
         try {

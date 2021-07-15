@@ -4,7 +4,6 @@ public class TestThread1 {
 	public static void main(String[] args) {
 		Runner1 r1 = new Runner1();
 		Thread t1 = new Thread(r1);// 同过new thre产生一个线程，把我们的线程类对象R1传进去。
-
 		Runner2 t2 = new Runner2();// 同过new thre产生一个线程，把我们的线程类对象R1传进去。
         t2.start();//因为Runner2是直接继承的Thread类
 

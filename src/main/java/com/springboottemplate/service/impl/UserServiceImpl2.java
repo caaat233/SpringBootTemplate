@@ -22,9 +22,12 @@ public class UserServiceImpl2 implements UserService {
     }
 
     @Override
-    public List<Map>  findAllDB() {
+    public List<Map> findAllDB() {
         return userMapper.findAll();
     }
 
-
+    @Override
+    public Map findOne(int id) {
+        return userMapper.findOne(id);
+    }
 }
