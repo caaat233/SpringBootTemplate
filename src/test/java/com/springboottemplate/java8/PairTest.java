@@ -37,7 +37,7 @@ public class PairTest {
      *
      * @param checkFields
      */
-    String validateFields(Pair<String, Object>... checkFields) {
+    public String validateFields(Pair<String, Object>... checkFields) {
         for (Pair<String, Object> checkField : checkFields) {
             Object value = checkField.getValue();
             if (checkField.getValue() == null) {

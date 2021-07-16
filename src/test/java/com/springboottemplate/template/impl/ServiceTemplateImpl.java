@@ -1,0 +1,42 @@
+package com.springboottemplate.template.impl;
+
+import com.alibaba.fastjson.JSON;
+import com.springboottemplate.template.Result;
+import com.springboottemplate.template.ServiceCallback;
+import com.springboottemplate.template.ServiceTemplate;
+import org.apache.poi.ss.formula.functions.T;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * @author 唐涛
+ * @description: TODO
+ * @date 2021/7/16 11:31
+ */
+public class ServiceTemplateImpl implements ServiceTemplate {
+    private static final Logger log = LoggerFactory.getLogger(ServiceTemplateImpl.class);
+
+    @Override
+    public <T> Result<T> exction(ServiceCallback serviceCallback, Object object) throws Exception {
+        Result<T> result = null;
+        long start = System.currentTimeMillis();
+        try {
+            // 我们这里面先啥都不处理，就计算一下方法执行时间就行，打印一下入参
+            log.debug(JSON.toJSONString(object));
+            //参数检查
+            serviceCallback.paramCheck();
+            //
+            result = serviceCallback.executeAction();
+            System.out.println(JSON.toJSONString(result.getData()));
+            long end = System.currentTimeMillis();
+            log.debug("方法运行时间：" + (end - start));
+        } catch (Exception e) {
+            //error log
+            long end = System.currentTimeMillis();
+            log.error(JSON.toJSONString(object) + e.getMessage());
+            result = Result.error(1, e.getMessage());
+            log.error("方法运行时间：" + (end - start));
+        }
+        return result;
+    }
+}
