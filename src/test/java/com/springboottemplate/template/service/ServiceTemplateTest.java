@@ -1,9 +1,8 @@
-package com.springboottemplate.template;
+package com.springboottemplate.template.service;
 
-import com.alibaba.fastjson.JSON;
 import com.springboottemplate.java8.PairTest;
 import com.springboottemplate.pojo.User;
-import com.springboottemplate.template.impl.ServiceTemplateImpl;
+import com.springboottemplate.template.Result;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
 import org.springframework.transaction.support.TransactionTemplate;

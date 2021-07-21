@@ -1,4 +1,6 @@
-package com.springboottemplate.template;
+package com.springboottemplate.template.service;
+
+import com.springboottemplate.template.Result;
 
 /**
  * @author 唐涛
