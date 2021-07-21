@@ -2,7 +2,7 @@ package com.springboottemplate.template;
 
 /**
  * @author 唐涛
- * @description: TODO
+ * @description: 回调函数里面定义行为
  * @date 2021/7/16 11:28
  */
 public interface ServiceCallback<T> {

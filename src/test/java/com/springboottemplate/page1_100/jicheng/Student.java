@@ -55,4 +55,20 @@ public class Student extends Person {
 	void SysMethod() {
 		System.out.println("子类在打印");
 	}
+
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
+	}
+
+	public int getB() {
+		return b;
+	}
+
+	public void setB(int b) {
+		this.b = b;
+	}
 }

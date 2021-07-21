@@ -6,6 +6,7 @@ import com.springboottemplate.pojo.User;
 import com.springboottemplate.template.impl.ServiceTemplateImpl;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
+import org.springframework.transaction.support.TransactionTemplate;
 
 /**
  * @author 唐涛
@@ -14,6 +15,7 @@ import org.junit.Test;
  */
 public class ServiceTemplateTest {
     ServiceTemplateImpl serviceTemplate = new ServiceTemplateImpl();
+    TransactionTemplate transactionTemplate;
 
     public static void main(String[] args) {
 

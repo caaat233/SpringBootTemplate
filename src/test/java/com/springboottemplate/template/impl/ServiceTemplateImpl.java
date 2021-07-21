@@ -16,6 +16,14 @@ import org.slf4j.LoggerFactory;
 public class ServiceTemplateImpl implements ServiceTemplate {
     private static final Logger log = LoggerFactory.getLogger(ServiceTemplateImpl.class);
 
+    /**
+     * 使用Callback 模式与模板方法模式配合，比继承灵活性更高
+     * @param serviceCallback
+     * @param object
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
     @Override
     public <T> Result<T> exction(ServiceCallback serviceCallback, Object object) throws Exception {
         Result<T> result = null;
