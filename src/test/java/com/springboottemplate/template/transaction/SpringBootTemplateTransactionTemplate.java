@@ -1,8 +1,6 @@
 package com.springboottemplate.template.transaction;
 
-import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.TransactionCallback;
 
 /**
  * @author 唐涛

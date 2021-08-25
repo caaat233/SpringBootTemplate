@@ -154,6 +154,7 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
             <version>0.1.0.RELEASE</version>
         </dependency>
+
     </dependencies>
 
 

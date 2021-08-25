@@ -15,6 +15,7 @@ public class User {
 	private String state;
 	private String statePhoto;
 	private int probibit;
+	private Double distance;
 	
 	
 	
@@ -129,13 +130,34 @@ public class User {
 
 	public User() {
 	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", area=" + area
-				+ ", college=" + college + ", grade=" + grade + ", tel=" + tel + ", qq=" + qq + ", photo=" + photo
-				+ ", point=" + point + ", state=" + state + ", statePhoto=" + statePhoto + ", probibit=" + probibit
-				+ "]";
+
+
+	public Double getDistance() {
+		return distance;
 	}
 
-	
+	public void setDistance(Double distance) {
+		this.distance = distance;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id='" + id + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", name='" + name + '\'' +
+				", area='" + area + '\'' +
+				", college='" + college + '\'' +
+				", grade='" + grade + '\'' +
+				", tel='" + tel + '\'' +
+				", qq='" + qq + '\'' +
+				", photo='" + photo + '\'' +
+				", point=" + point +
+				", state='" + state + '\'' +
+				", statePhoto='" + statePhoto + '\'' +
+				", probibit=" + probibit +
+				", distance=" + distance +
+				'}';
+	}
 }

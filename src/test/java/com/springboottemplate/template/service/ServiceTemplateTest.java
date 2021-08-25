@@ -45,4 +45,29 @@ public class ServiceTemplateTest {
             }
         }, "ServiceTemplateTest.test");
     }
+
+    /**
+     * 临时
+     * @param user
+     * @return
+     * @throws Exception
+     */
+    public Result test_serviceTemplate_exction2(User user) throws Exception {
+        return serviceTemplate.exction(new ServiceCallback<User>() {
+            @Override
+            public void paramCheck() {
+                if (user == null) {
+                    PairTest pairTest = new PairTest();
+                    pairTest.validateFields((Pair.of("user", user)));
+                }
+            }
+
+            @Override
+            public Result executeAction() throws Exception {
+                //可以给user里面的属性赋值，但是不能改变user引用,因为user是final类型
+                user.setEmail("92397249");
+                return Result.success(user);
+            }
+        }, "ServiceTemplateTest.test");
+    }
 }

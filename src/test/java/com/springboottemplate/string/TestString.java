@@ -41,6 +41,18 @@ public class TestString {
 		System.out.println(name);
 	}
 
+	/**
+	 * 测试string,valueOf
+	 */
+	@Test
+	public void test2(){
+		String s = String.valueOf(12L);
+		if (s.equals("null")){
+			System.out.println(1);
+		}else {
+			System.out.println(s);
+		}
+	}
 
 	/**
 	 **

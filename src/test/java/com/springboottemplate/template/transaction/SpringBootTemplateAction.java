@@ -7,6 +7,7 @@ package com.springboottemplate.template.transaction;
  */
 
 /**
+ * @FunctionalInterface
  * 通过JDK8源码javadoc，可以知道这个注解有以下特点：
  * <p>
  * 1、该注解只能标记在"有且仅有一个抽象方法"的接口上。
@@ -22,6 +23,6 @@ package com.springboottemplate.template.transaction;
  */
 @FunctionalInterface
 public interface SpringBootTemplateAction<T> {
-
+    //interface一定是abstract的，所以是否加abstract没什么区别。
     T execute();
 }

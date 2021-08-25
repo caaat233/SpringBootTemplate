@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestDouble {
 
 
-
+double aDouble;
 
     //一个字符串是不是整数、浮点数、不能为负数
     @Test
@@ -28,6 +28,12 @@ public class TestDouble {
         BigDecimal bigDecimal=new BigDecimal(20555.6666);
         System.out.println(bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
         System.out.println(bigDecimal);
+
+        Double dddd=aDouble;
+        System.out.println(dddd);
+        Double D0805=null;
+        double d0805=D0805;
+
 
     }
 

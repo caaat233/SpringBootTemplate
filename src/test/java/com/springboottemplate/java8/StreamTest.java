@@ -1,14 +1,12 @@
 package com.springboottemplate.java8;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.springboottemplate.pojo.User;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -17,6 +15,36 @@ import java.util.stream.Collectors;
  * @date 2021/5/10 14:19
  */
 public class StreamTest {
+
+
+    @Test
+    public void sort(){
+        List<User> userList = Lists.newArrayList();
+        User user1=new User();
+        user1.setDistance(null);
+
+        User user2=new User();
+        user2.setDistance(2.0);
+
+        User user3=new User();
+        user3.setDistance(6.0);
+
+        User user4=new User();
+        user4.setDistance(1.0);
+
+        User user5=new User();
+        user5.setDistance(6.0);
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
+        userList.add(user4);
+        userList.add(user5);
+
+        List<User> collect = userList.stream().filter(value->Objects.nonNull(value.getDistance())).sorted(Comparator.comparing(User::getDistance)).collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(collect));
+
+
+    }
 
 
 
