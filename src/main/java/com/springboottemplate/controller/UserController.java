@@ -1,143 +1,51 @@
 package com.springboottemplate.controller;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.alibaba.druid.support.json.JSONUtils;
-import com.springboottemplate.annontation.LogTestAnno;
-import com.springboottemplate.pojo.User;
-import com.springboottemplate.util.Consumer;
-import com.springboottemplate.util.JmsConfig;
-import com.springboottemplate.util.Producer;
-import com.springboottemplate.util.ResultHandler;
-import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.common.message.Message;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.springboottemplate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.springboottemplate.service.UserService;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
+import java.util.Map;
 
+/**
+ * @author 唐涛
+ * @description:
+ * @date 2021/8/1 19:09
+ */
 @Controller
+@RequestMapping("user")
 public class UserController {
-    @Autowired
-    @Qualifier("userService1")
-    private UserService userService;
 
     @Autowired
-    Executor executor;
-
-    @Autowired
-    private Producer producer;
+    @Qualifier("UserServiceImpl")
+    UserService userService;
 
 
-    @Resource
-    private List<ResultHandler> resultHandlers;
-
-    public static final ThreadLocal<String> threadLocal = new ThreadLocal();
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
-
-
-    /**
-     * http://127.0.0.1:8082/testResultHandler?body=A
-     * http://127.0.0.1:8082/testResultHandler?body=B
-     * 测试，ResultHandler 接口下的所有实现类是不是都能初始化到resultHandlers中.(测试结束是可以得，如果一个接口有多个实现类，我们可以通过这种方式，判断是哪个接口执行)
-     *
-     * @return
-     */
-    @RequestMapping("testResultHandler")
+    @SentinelResource("findAllUserFromDB")
+    @RequestMapping("findAllUserByDB")
     @ResponseBody
-    public String testResultHandler(HttpServletRequest request) {
-        String body = request.getParameter("body");
-        String result=null;
-        for (ResultHandler resultHandler : resultHandlers) {
-            if (resultHandler.accept(body)) {
-                result= resultHandler.execute(body);
-                System.out.println(result);
-            }
-        }
-
-        return result;
+    public List<Map> testfindUser() {
+        return userService.findAllUserFromDB();
     }
 
-
-    /**
-     * http://127.0.0.1:8082/text/rocketmq
-     * 测试mq
-     *
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping("/text/rocketmq")
-    public Object callback() throws Exception {
-        List<String> mesList = new ArrayList<>();
-        mesList.add("小小");
-        mesList.add("爸爸");
-        mesList.add("妈妈");
-        mesList.add("爷爷");
-        mesList.add("奶奶");
-        //总共发送五次消息
-        for (String s : mesList) {
-            //创建生产信息
-            Message message = new Message(JmsConfig.TOPIC, "testtag", ("小小一家人的称谓:" + s).getBytes());
-            //发送
-            SendResult sendResult = producer.getProducer().send(message);
-            logger.info("输出生产者信息={}", sendResult);
-        }
-        return "list";
-    }
-
-
-    @RequestMapping("user")
-    public String findAllUser(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("userList", userService.findAll());
-        // 设置了转发的前缀后缀了已经，直接写这个页面即可
-        for (int i = 1; i <= 10; i++) {
-            executor.execute(new Runnable() {
-                @Override
-                public void run() {
-
-                }
-            });
-        }
-        return "list";
-    }
-
-    @RequestMapping("userResponseBody")
+    @SentinelResource("findOneUserByIdFromDB")
+    @RequestMapping("findOneUserByIdFromDB")
     @ResponseBody
-    public String findAllUser1(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("userList", userService.findAll());
-        // 设置了转发的前缀后缀了已经，直接写这个页面即可
-        return userService.findAll().toString();
+    public Map findOneUserByIdFromDB(int id) {
+        return userService.findUserByIdFromDB(id);
     }
 
-    /**
-     * 直接向页面响应数据
-     *
-     * @param request
-     * @param response
-     * @return
-     */
-    @LogTestAnno(name = "映射得url：findAllUser2")
-    @RequestMapping("findAllUser2")
+
+    @SentinelResource("findUserByNameFromDB")
+    @RequestMapping("findUserByNameFromDB")
     @ResponseBody
-    public String findAllUser2(HttpServletRequest request, HttpServletResponse response) throws InterruptedException {
-        threadLocal.set("张三" + Math.random());
-        request.setAttribute("userList", userService.findAll());
-        Thread.sleep(5000);
-        User user = new User();
-        user.setArea("qqq");
-        user.setName("张三");
-        return user.toString();
+    public List<Map> findUserByNameFromDB(String name) {
+        return userService.findUserByNameFromDB(name);
     }
+
+
 }

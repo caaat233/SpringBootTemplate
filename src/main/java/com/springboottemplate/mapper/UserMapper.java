@@ -14,9 +14,8 @@ public interface UserMapper {
 	public List<Map> findAll();
 
 
+	public Map findUserById(@Param("id") int id);
 
-	public Map findOne(@Param("id") int id);
-
-
+	public List<Map> findUserByName(@Param("name") String name);
 
 }

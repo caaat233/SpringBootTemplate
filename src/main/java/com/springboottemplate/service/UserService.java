@@ -1,17 +1,35 @@
 package com.springboottemplate.service;
 
+
 import java.util.List;
 import java.util.Map;
 
-import com.springboottemplate.pojo.User;
-
+/**
+ * @author 唐涛
+ * @description: TODO
+ * @date 2021/8/31 19:17
+ */
 public interface UserService {
-	public List<User> findAll();
+    /**
+     * 从DB查所有用户
+     *
+     * @return
+     */
+    public List<Map> findAllUserFromDB();
 
+    /**
+     * 通过id 用户
+     *
+     * @param id
+     * @return
+     */
+    public Map findUserByIdFromDB(int id);
 
-	public List<Map>  findAllDB();
-
-
-	public Map  findOne(int id);
-
+    /**
+     * 通过name用户
+     *
+     * @param name
+     * @return
+     */
+    public List<Map> findUserByNameFromDB(String name);
 }
