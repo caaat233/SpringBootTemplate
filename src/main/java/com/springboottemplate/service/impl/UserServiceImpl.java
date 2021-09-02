@@ -1,9 +1,13 @@
 package com.springboottemplate.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.springboottemplate.constant.RedisPrefixKeyConstants;
 import com.springboottemplate.mapper.UserMapper;
 import com.springboottemplate.service.UserService;
+import org.codehaus.groovy.runtime.dgmimpl.arrays.LongArrayGetAtMetaMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import redis.clients.jedis.Jedis;
 
 import java.util.List;
 import java.util.Map;
@@ -19,13 +23,21 @@ import java.util.Map;
  */
 @Service("UserServiceImpl")
 public class UserServiceImpl implements UserService {
+
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    Jedis jedis;
 
 
     @Override
     public List<Map> findAllUserFromDB() {
-        return userMapper.findAll();
+        List<Map> allMap = userMapper.findAll();
+        for (Map map : allMap) {
+            long id = (long) map.get("id");
+            jedis.setex(RedisPrefixKeyConstants.USER_INFO + "_" + id, 300, JSON.toJSONString(map));
+        }
+        return allMap;
     }
 
 
@@ -37,6 +49,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Map> findUserByNameFromDB(String name) {
         return userMapper.findUserByName(name);
+    }
+
+    @Override
+    public String findUserByIdFromRedis(int id) {
+        String userInfo = jedis.get(RedisPrefixKeyConstants.USER_INFO + "_" + String.valueOf(id));
+
+        return userInfo;
     }
 
 }

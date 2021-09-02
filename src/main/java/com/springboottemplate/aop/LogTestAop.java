@@ -47,7 +47,6 @@ public class LogTestAop {
         Method[] methods = aClass.getMethods();
 
         for (Method method : methods) {
-
             if (method.isAnnotationPresent(LogTestAnno.class)){
                 LogTestAnno annotation = method.getAnnotation(LogTestAnno.class);
                 logger.info("注解LogTestAnno生效了，生效类名："+aClass .getSimpleName()+"  方法名："+method.getName()+"  注解得值:"+annotation.name());

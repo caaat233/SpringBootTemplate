@@ -36,7 +36,10 @@ public class UserController {
     @RequestMapping("findOneUserByIdFromDB")
     @ResponseBody
     public Map findOneUserByIdFromDB(int id) {
-        return userService.findUserByIdFromDB(id);
+        Map userMap = userService.findUserByIdFromDB(id);
+        //查询出来的数据放到redis
+        String userId = (String) userMap.get("id");
+        return userMap;
     }
 
 
@@ -47,5 +50,30 @@ public class UserController {
         return userService.findUserByNameFromDB(name);
     }
 
+    /**
+     * 查redis缓存
+     *
+     * @param id
+     * @return
+     */
+    @SentinelResource("findUserByIdFromRedisA")
+    @RequestMapping("findUserByIdFromRedisA")
+    @ResponseBody
+    public String findUserByIdFromRedisA(int id) {
+        return userService.findUserByIdFromRedis(id);
+    }
+
+    /**
+     * 查redis缓存
+     *
+     * @param id
+     * @return
+     */
+    @SentinelResource("findUserByIdFromRedisB")
+    @RequestMapping("findUserByIdFromRedisB")
+    @ResponseBody
+    public String findUserByIdFromRedisB(int id) {
+        return userService.findUserByIdFromRedis(id);
+    }
 
 }

@@ -32,4 +32,14 @@ public interface UserService {
      * @return
      */
     public List<Map> findUserByNameFromDB(String name);
+
+
+
+    /**
+     * 通过name用户
+     *
+     * @param id
+     * @return
+     */
+    public String findUserByIdFromRedis(int id);
 }

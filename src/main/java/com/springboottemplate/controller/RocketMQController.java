@@ -31,6 +31,7 @@ public class RocketMQController {
     private UserService userService;
 
     @Autowired
+    @Qualifier("asyncServiceExecutor")
     Executor executor;
 
     @Autowired
