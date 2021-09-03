@@ -8,6 +8,7 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -31,6 +32,7 @@ public class Consumer {
      * 消费者组
      */
     public static final String CONSUMER_GROUP = "test_consumer";
+
     /**
      * 通过构造函数 实例化对象
      */
@@ -39,7 +41,9 @@ public class Consumer {
         consumer = new DefaultMQPushConsumer(CONSUMER_GROUP);
         consumer.setNamesrvAddr(JmsConfig.NAME_SERVER);
         //消费模式:一个新的订阅组第一次启动从队列的最后位置开始消费 后续再启动接着上次消费的进度开始消费
+        //消费模式，集群，一个组内，只有一台机器消费
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
+        consumer.setMessageModel(MessageModel.CLUSTERING);
         //订阅主题和 标签（ * 代表所有标签)下信息
         consumer.subscribe(JmsConfig.TOPIC, "*");
         // //注册消费的监听 bu，并返回消费的状态信息
@@ -54,6 +58,18 @@ public class Consumer {
                 }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
+                //
+                /**
+                 *         RocketMQ规定，以下三种情况统一按照消费失败处理并会发起重试。
+                 *                 业务消费方返回ConsumeConcurrentlyStatus.RECONSUME_LATER
+                 *                  业务消费方返回null
+                 *                 业务消费方主动/被动抛出异常
+                 *（推荐返回ConsumeConcurrentlyStatus.RECONSUME_LATER）
+                 *
+                 *                 链接：https://juejin.cn/post/6844903809186005000
+                 */
+
+
                 return ConsumeConcurrentlyStatus.RECONSUME_LATER;
             }
             return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;

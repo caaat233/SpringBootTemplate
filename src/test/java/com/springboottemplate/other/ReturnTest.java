@@ -51,4 +51,22 @@ public class ReturnTest {
         }
     }
 
+
+    /**
+     * 模拟CPU占满
+     */
+    @Test
+    public void testCPULoop() throws InterruptedException {
+        System.out.println("请求cpu死循环");
+        Thread.currentThread().setName("loop-thread-cpu");
+        int num = 0;
+        while (true) {
+            num++;
+            if (num == Integer.MAX_VALUE) {
+                System.out.println("reset");
+            }
+            num = 0;
+        }
+    }
+
 }

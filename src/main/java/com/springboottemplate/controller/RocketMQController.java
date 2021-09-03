@@ -88,7 +88,7 @@ public class RocketMQController {
             //创建生产信息
             Message message = new Message(JmsConfig.TOPIC, "testtag", ("小小一家人的称谓:" + s).getBytes());
             //发送
-            SendResult sendResult = producer.getProducer().send(message);
+            SendResult sendResult = producer.getProducer().send(message,3000L);
             logger.info("输出生产者信息={}", sendResult);
         }
         return "list";

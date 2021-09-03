@@ -27,6 +27,8 @@ public class Producer {
         producer.setVipChannelEnabled(false);
         //绑定name server
         producer.setNamesrvAddr(JmsConfig.NAME_SERVER);
+        /**同步发送消息，如果3秒内没有发送成功，则重试3次*/
+        producer.setRetryTimesWhenSendFailed(3);
         logger.info("生产者注册成功");
         start();
     }
@@ -35,6 +37,8 @@ public class Producer {
      */
     public void start(){
         try {
+
+
             this.producer.start();
         } catch (MQClientException e) {
             e.printStackTrace();
