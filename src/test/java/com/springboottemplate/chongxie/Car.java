@@ -8,22 +8,23 @@ package com.springboottemplate.chongxie;
 public class Car {
 
 
-    public  void    buildCar(){
+    public void buildCar() {
         System.out.println("Car类开始构造汽车");
         bulidfdj();
         System.out.println("Car类结束构造汽车");
 
     }
-    protected void bulidfdj(){
+
+    protected void bulidfdj() {
         System.out.println("Car类结束构造汽车---构造发动机");
     }
 
 }
 
 
-class  SmallCar extends  Car{
+class SmallCar extends Car {
     public static void main(String[] args) {
-        SmallCar smallCar=new SmallCar();
+        SmallCar smallCar = new SmallCar();
         smallCar.buildCar();
     }
 
@@ -33,9 +34,10 @@ class  SmallCar extends  Car{
         bulidfdj();
         System.out.println("Car类结束构造汽车");
     }
+
     @Override
-    protected void bulidfdj(){
-       //super.bulidfdj();
+    protected void bulidfdj() {
+        //super.bulidfdj();
         System.out.println("SmallCar类结束构造汽车---构造发动机");
     }
 

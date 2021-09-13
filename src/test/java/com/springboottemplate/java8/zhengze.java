@@ -12,6 +12,10 @@ import org.junit.Test;
  * 正则常用符号学习
  * https://tool.oschina.net/uploads/apidocs/jquery/regexp.html
  * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
+ *
+ * 常用的正则表达式
+ * https://www.cnblogs.com/zxin/archive/2013/01/26/2877765.HTML
+ *
  */
 public class zhengze {
 
