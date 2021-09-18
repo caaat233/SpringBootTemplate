@@ -45,6 +45,7 @@ public class LockController {
     public String dealLock(int id) throws InterruptedException {
 
         if (id == 1) {
+            //类锁
             synchronized (LockController.class) {
                 Thread.sleep(2000);
                 synchronized (Object.class) {

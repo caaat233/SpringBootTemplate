@@ -26,7 +26,7 @@ public class LockMockUtil {
 //    }
 
     /**
-     * 这个只能锁住单例
+     * 这个锁是对象锁只能锁住单例，因为她锁的是LockMockUtil这个对象，LockMockUtil加了@Component注解，默认是单例的，所以多线程下，这个锁能生效
      * @throws InterruptedException
      */
     public synchronized void Sleep5s_single() throws InterruptedException {
@@ -34,7 +34,7 @@ public class LockMockUtil {
     }
 
     /**
-     * 这个就算LockMockUtil是多例，也能锁住
+     * 这个锁是类锁、就算LockMockUtil是多例，也能锁住
      * @throws InterruptedException
      */
     public  void Sleep5s_prototype() throws InterruptedException {

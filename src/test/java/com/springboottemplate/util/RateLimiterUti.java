@@ -49,7 +49,7 @@ public class RateLimiterUti {
         userNameList.add("小明");
         userNameList.add("小红");
         userNameList.add("校长");
-        //0.5代表一秒最0.5少个
+        //100代表一秒100个
         RateLimiter rateLimiter = RateLimiter.create(100);
         for (String username : userNameList) {
             executor.execute(() -> {

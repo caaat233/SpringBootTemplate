@@ -70,12 +70,12 @@ public class RedisStringTest {
      *
      *
      *
-     * @param userId
+     * @param userId  互
      * @return
      * @throws Exception
      */
     public String resolveCacheBreakdown2(String userId) throws Exception {
-        String keyLock = "QUERY^9USERBYID^LOCK" + "^" + userId;//切记，只是锁查询不到这个user信息的userid,不要把整个方法都锁住了
+        String keyLock = "QUERY^9USERBYID^LOCK" + "^" + userId;//切记，只是锁查询不到这个user信息的userid,不要把整个方法都锁住了。斥锁，自旋，很大的缺点会降低系统吞吐量
         String fromCache = jedis.get(userId);
         if (fromCache == null) {
             String ok = jedis.set(keyLock, "1", "NX", "EX", 10);
@@ -103,9 +103,14 @@ public class RedisStringTest {
      * 只适用于单机的项目，不适合分布式缓存(分布式环境，必须用分布式锁，因为lock锁或者synchronized 都是单机锁)
      * 这样存在问题，加锁后，其他线程的查询方法都需要排队
      */
+
+    /**
+     *https://juejin.cn/post/6844904150996615182     ReentrantLock 学习
+     */
+
     public String resolveCacheBreakdown(String userId) throws Exception {
         if (jedis.get(userId) == null) {
-            if (lock.tryLock()) {
+            if (lock.tryLock()) {//可以理解为锁的是lock这个对象，是对象锁，由于这个对象也是单例的，所以功能上实现了类锁的功能
                 try {//防止报错不放锁
                     System.out.println(Thread.currentThread().getName()+":我拿到锁了，我要查询数据库了");
                     String dataFromDB = getDataFromDB(userId, true);
