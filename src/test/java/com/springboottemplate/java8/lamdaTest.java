@@ -59,6 +59,7 @@ public class lamdaTest {
         int i = 1;
         boolean success = false;
         AtomicBoolean needSendMsg = new AtomicBoolean(false);
+        String name="zhangsan";
         Collections.sort(names, new Comparator<String>() {
             @Override
             public int compare(String a, String b) {

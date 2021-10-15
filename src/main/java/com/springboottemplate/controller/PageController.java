@@ -49,7 +49,7 @@ public class PageController extends WebMvcConfigurerAdapter {
 	/* 跨域 */
 //	public void addCorsMappings(CorsRegistry registry) {
 //	    super.addCorsMappings(registry);
-//	    registry.addMapping("/cors/**")
+//	    registry.addMapping("/cors/**")l
 //	            .allowedHeaders("*")
 //	            .allowedMethods("POST","GET")
 //	            .allowedOrigins("*");

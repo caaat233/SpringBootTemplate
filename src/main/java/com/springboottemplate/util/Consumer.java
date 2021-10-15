@@ -1,6 +1,7 @@
 package com.springboottemplate.util;
 
 import com.springboottemplate.aop.LogTestAop;
+import com.springboottemplate.event.EvenPublish;
 import groovy.util.logging.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -11,6 +12,7 @@ import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.UnsupportedEncodingException;
@@ -32,6 +34,8 @@ public class Consumer {
      * 消费者组
      */
     public static final String CONSUMER_GROUP = "test_consumer";
+    @Autowired
+    EvenPublish evenPublish;
 
     /**
      * 通过构造函数 实例化对象
@@ -55,6 +59,7 @@ public class Consumer {
                     //消费者获取消息 这里只输出 不做后面逻辑处理
                     String body = new String(msg.getBody(), "utf-8");
                     logger.info("Consumer-获取消息-主题topic为={}, 消费消息为={}", msg.getTopic(), body);
+                    evenPublish.pubAcceptFamilyMessageEvent(body);
                 }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

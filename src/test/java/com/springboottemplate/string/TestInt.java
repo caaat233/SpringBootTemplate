@@ -10,6 +10,25 @@ import org.junit.Test;
 public class TestInt {
 
 
+
+    @Test
+    public void switchtest11() {
+    }
+
+
+    public Boolean switchtest() {
+        switch ("GRAY_SYSTEM") {
+            case "OLD_SYSTEM":
+                return false;
+            case "NEW_SYSTEM":
+                return true;
+            case "":
+                //灰度期间，返回null进入下面的判断
+                return null;
+            default:
+                return false;
+        }
+    }
     /**
      * Integer 对象比较
      */
