@@ -2,8 +2,11 @@ package com.springboottemplate.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.springboottemplate.constant.RedisPrefixKeyConstants;
+import com.springboottemplate.controller.RocketMQController;
+import com.springboottemplate.controller.UserController;
 import com.springboottemplate.mapper.UserMapper;
 import com.springboottemplate.service.UserService;
+import com.springboottemplate.util.UserThreadLocalUtil;
 import org.codehaus.groovy.runtime.dgmimpl.arrays.LongArrayGetAtMetaMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +40,8 @@ public class UserServiceImpl implements UserService {
             long id = (long) map.get("id");
             jedis.setex(RedisPrefixKeyConstants.USER_INFO + "_" + id, 300, JSON.toJSONString(map));
         }
+        //这样用threadLocal，不好，最好专门弄一个工具类
+        System.out.println(RocketMQController.threadLocal.get());
         return allMap;
     }
 
@@ -48,6 +53,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Map> findUserByNameFromDB(String name) {
+        System.out.println(UserThreadLocalUtil.getUserInfo());
         return userMapper.findUserByName(name);
     }
 

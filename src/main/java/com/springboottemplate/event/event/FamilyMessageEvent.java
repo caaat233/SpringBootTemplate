@@ -8,6 +8,9 @@ import org.springframework.context.ApplicationEvent;
  * @date 2021/10/15 11:14
  */
 public class FamilyMessageEvent extends ApplicationEvent {
+    /**
+     * 这里只是测试用的，真是的应用的话，这里面的属性定义的还是比较复杂的
+     */
 
     //一个人称谓的字符串
     String text;

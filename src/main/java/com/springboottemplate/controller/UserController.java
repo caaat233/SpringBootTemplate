@@ -1,7 +1,9 @@
 package com.springboottemplate.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.springboottemplate.pojo.User;
 import com.springboottemplate.service.UserService;
+import com.springboottemplate.util.UserThreadLocalUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -47,6 +49,12 @@ public class UserController {
     @RequestMapping("findUserByNameFromDB")
     @ResponseBody
     public List<Map> findUserByNameFromDB(String name) {
+        //使用threadLocal
+        User user = new User();
+        user.setName("zhangsan");
+        //放的时候，可以先remove一下
+        UserThreadLocalUtil.rmUserInfo();
+        UserThreadLocalUtil.setUserInfo(user);
         return userService.findUserByNameFromDB(name);
     }
 

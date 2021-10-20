@@ -14,6 +14,6 @@ public class FamilyMessageListener implements ApplicationListener<FamilyMessageE
     @Override
     public void onApplicationEvent(FamilyMessageEvent familyMessageEvent) {
         String text = familyMessageEvent.getText();
-        System.out.println("监听器监听到了faimly 事件，获取的值为：" + text + "后续会做出业务处理");
+        System.out.println("监听器监听到了faimly 事件，获取的值为：" + text + "，后续会做出业务处理");
     }
 }
