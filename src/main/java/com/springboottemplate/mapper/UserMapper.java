@@ -18,4 +18,6 @@ public interface UserMapper {
 
 	public List<Map> findUserByName(@Param("name") String name);
 
+
+	public int updateUserById(@Param("id") int id,@Param("version") int version);
 }

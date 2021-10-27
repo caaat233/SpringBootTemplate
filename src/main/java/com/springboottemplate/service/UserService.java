@@ -42,4 +42,12 @@ public interface UserService {
      * @return
      */
     public String findUserByIdFromRedis(int id);
+
+    /**
+     * 更新用户信息，有乐观锁的逻辑
+     * @param id
+     * @return
+     */
+
+    public String optimisticLock(int id);
 }
