@@ -6,6 +6,7 @@ import com.springboottemplate.controller.RocketMQController;
 import com.springboottemplate.mapper.UserMapper;
 import com.springboottemplate.service.UserService;
 import com.springboottemplate.util.UserThreadLocalUtil;
+import org.apache.commons.collections.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -84,6 +85,9 @@ public class UserServiceImpl implements UserService {
         int retryCount = 0;
         //先查询用户信息以及当前版本号
         Map user = userMapper.findUserById(id);
+        if (MapUtils.isEmpty(user)){
+            return null;
+        }
         while (retryCount < 3) {
             int version = (int) user.get("version");
             //这个updateUserById方法里面的sql是：update user set username=#{usernmae} where id=id and version=#{version}

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ *
  * @author 唐涛
  * @description: TODO
  * @date 2021/7/16 11:31
@@ -15,6 +16,10 @@ public class ServiceTemplateImpl implements ServiceTemplate {
 
     /**
      * 使用Callback 模式与模板方法模式配合，比继承灵活性更高
+     *
+     * Callback 模式：只定义接口，不具体实现，在调用的时候，匿名实现接口。（将Callback(回调)函数作为其他函数的参数传入，以便在某个时间点调用这个方法。）
+     * 、
+     *
      * @param serviceCallback
      * @param object
      * @param <T>
