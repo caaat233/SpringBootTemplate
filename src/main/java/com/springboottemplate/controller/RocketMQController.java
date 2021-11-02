@@ -56,10 +56,10 @@ public class RocketMQController {
     @ResponseBody
     public String testResultHandler(HttpServletRequest request) {
         String body = request.getParameter("body");
-        String result=null;
+        String result = null;
         for (ResultHandler resultHandler : resultHandlers) {
             if (resultHandler.accept(body)) {
-                result= resultHandler.execute(body);
+                result = resultHandler.execute(body);
                 System.out.println(result);
             }
         }
@@ -86,9 +86,15 @@ public class RocketMQController {
         //总共发送五次消息
         for (String s : mesList) {
             //创建生产信息
-            Message message = new Message(JmsConfig.TOPIC, "testtag", ("小小一家人的称谓:" + s).getBytes());
+            Message message = new Message(JmsConfig.TOPIC_FAMILY, "testtag", ("小小一家人的称谓:" + s).getBytes());
             //发送
-            SendResult sendResult = producer.getProducer().send(message,3000L);
+            SendResult sendResult = producer.getProducer().send(message, 3000L);
+            if (sendResult.getSendStatus().equals("ok")) {
+                return sendResult.getMsgId();
+            }
+            //生产中的写法
+//            String msgId = producer.sendMessage(JmsConfig.TOPIC_FAMILY,
+//                    "testtag", "调用方appName", s.getBytes());
             logger.info("输出生产者信息={}", sendResult);
         }
         return "list";
