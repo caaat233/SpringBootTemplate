@@ -49,7 +49,7 @@ public class Consumer {
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
         consumer.setMessageModel(MessageModel.CLUSTERING);
         //订阅主题和 标签（ * 代表所有标签)下信息
-        consumer.subscribe(JmsConfig.TOPIC, "*");
+        consumer.subscribe(JmsConfig.TOPIC_FAMILY, "*");
         // //注册消费的监听 bu，并返回消费的状态信息
         consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
             // msgs中只收集同一个topic，同一个tag，并且key相同的message

@@ -26,16 +26,22 @@ public class Producer {
     private DefaultMQProducer producer;
 
     public Producer() {
-        //示例生产者
-        producer = new DefaultMQProducer(producerGroup);
-        //不开启vip通道 开通口端口会减2
-        producer.setVipChannelEnabled(false);
-        //绑定name server
-        producer.setNamesrvAddr(JmsConfig.NAME_SERVER);
-        /**同步发送消息，如果3秒内没有发送成功，则重试3次*/
-        producer.setRetryTimesWhenSendFailed(3);
-        logger.info("生产者注册成功");
-        start();
+        try {
+
+            //示例生产者
+            producer = new DefaultMQProducer(producerGroup);
+            //不开启vip通道 开通口端口会减2
+            producer.setVipChannelEnabled(false);
+            //绑定name server
+            producer.setNamesrvAddr(JmsConfig.NAME_SERVER);
+            /**同步发送消息，如果3秒内没有发送成功，则重试3次*/
+            producer.setRetryTimesWhenSendFailed(3);
+            logger.info("生产者注册成功");
+            start();
+        }catch (Exception e){
+            logger.error("初始化失败");
+        }
+
     }
 
     /**
