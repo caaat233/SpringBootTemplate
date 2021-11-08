@@ -16,7 +16,7 @@ public interface ServiceCallback<T> {
     void paramCheck() throws Exception;
 
     /**
-     * 其实我们可以返回result<T></>,但是我的项目没定义result，就直接返回泛型把
+     *
      * @return
      * @throws Exception
      */

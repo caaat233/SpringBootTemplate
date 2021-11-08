@@ -12,6 +12,15 @@ public class JiaYou09 {
         p1.skkr();
         JiaYou09 p2 = new JiaYou09("宋宇轩", 19);
         p2.skkr();
+        int i = 5;
+        if (i > 2) {
+
+            System.out.println(2);
+        } else if (i > 3) {
+            System.out.println(3);
+        } else if (i > 4) {
+            System.out.println(4);
+        }
 
     }
 

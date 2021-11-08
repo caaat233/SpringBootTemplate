@@ -40,12 +40,14 @@ public class ServiceTemplateImpl implements ServiceTemplate {
             System.out.println(JSON.toJSONString(result.getData()));
             long end = System.currentTimeMillis();
             log.debug("方法运行时间：" + (end - start));
-        } catch (Exception e) {
+        } catch (Exception e) { //可以先捕获自己定义的异常
             //error log
             long end = System.currentTimeMillis();
             log.error(JSON.toJSONString(object) + e.getMessage());
             result = Result.error(1, e.getMessage());
             log.error("方法运行时间：" + (end - start));
+        }catch (Throwable e){
+            log.error(JSON.toJSONString(object) + e.getMessage());
         }
         return result;
     }
