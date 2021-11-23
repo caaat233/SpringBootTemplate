@@ -62,4 +62,10 @@ public class BubbleSort {
 
 	}
 
+
+	public int  sum(){
+		int i=1;
+		int j=1;
+		return i+j;
+	}
 }

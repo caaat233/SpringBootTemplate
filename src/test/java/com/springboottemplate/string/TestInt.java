@@ -10,9 +10,12 @@ import org.junit.Test;
 public class TestInt {
 
 
-
     @Test
     public void switchtest11() {
+        for (int i=1;i<=100;i++){
+            System.out.println(Math.random());
+        }
+
     }
 
 
@@ -29,6 +32,7 @@ public class TestInt {
                 return false;
         }
     }
+
     /**
      * Integer 对象比较
      */
@@ -48,7 +52,7 @@ public class TestInt {
         System.out.println(integer1 == integer2);//falsef
         System.out.println(integer3 == integer4);//false
         System.out.println(integer3.equals(integer4));//true
-        System.out.println(i==integer1);//true
+        System.out.println(i == integer1);//true
         System.out.println("***************************************");
         Integer integer5 = 100;
         Integer integer6 = 100;
@@ -56,6 +60,6 @@ public class TestInt {
         Integer integer8 = 200;
         System.out.println(integer5 == integer1);//false
         System.out.println(integer6 == integer5);//true
-        System.out.println(integer7==integer8);//false
+        System.out.println(integer7 == integer8);//false
     }
 }

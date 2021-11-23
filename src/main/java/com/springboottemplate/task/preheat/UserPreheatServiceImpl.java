@@ -36,8 +36,6 @@ public class UserPreheatServiceImpl implements IPreheatService<User> {
     Jedis jedis;
 
 
-
-
     @Override
     public void prepareRedisCache() {
         //每次查询开始的userId

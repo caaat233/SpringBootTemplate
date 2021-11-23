@@ -1,6 +1,5 @@
 package com.springboottemplate.util;
 
-import groovy.util.logging.Slf4j;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -38,7 +37,7 @@ public class Producer {
             producer.setRetryTimesWhenSendFailed(3);
             logger.info("生产者注册成功");
             start();
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("初始化失败");
         }
 

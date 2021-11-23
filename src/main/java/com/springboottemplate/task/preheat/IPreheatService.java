@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @author 唐涛
- * @description: TODO
+ * @description: IPreheatService
  * @date 2021/10/29 15:47
  */
 public interface IPreheatService<T> {
