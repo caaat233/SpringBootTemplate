@@ -49,8 +49,8 @@ public class RateLimiterUti {
         userNameList.add("小明");
         userNameList.add("小红");
         userNameList.add("校长");
-        //100代表一秒100个
-        RateLimiter rateLimiter = RateLimiter.create(100);
+        //1代表一秒1个
+        RateLimiter rateLimiter = RateLimiter.create(1);
         for (String username : userNameList) {
             executor.execute(() -> {
                 System.out.println("等待时间：" + rateLimiter.acquire());

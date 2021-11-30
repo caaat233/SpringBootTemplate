@@ -15,6 +15,11 @@ import java.util.Map;
  * @description: PairTest
  * @date 2021/4/30 15:52
  */
+
+/**
+ * pair 学习
+ * https://blog.csdn.net/huang_wu_yao_xin/article/details/81876844
+ */
 public class PairTest {
 
     @Test

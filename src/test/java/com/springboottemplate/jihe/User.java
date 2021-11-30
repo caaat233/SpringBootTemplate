@@ -5,6 +5,7 @@ import com.springboottemplate.reflex.Person;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Objects;
 
 public class User implements Serializable {
 	private static final long serialVersionUID = -1078433404507796595L;
@@ -121,5 +122,18 @@ public class User implements Serializable {
 				", password='" + password + '\'' +
 				", person=" + person +
 				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		User user = (User) o;
+		return id.equals(user.getId());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, userCode, userName, sex, token, createTime, tokenType, password, person);
 	}
 }
