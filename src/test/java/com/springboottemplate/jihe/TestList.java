@@ -32,9 +32,9 @@ public class TestList {
     @Test
     public void test14() {
         List<Object> list = new ArrayList<>();
-        String[] a = {"id=1","name=张三"};
-        String[] b ={"id=1","name=张三"};
-        String[] c = {"id=2","name=张三"};
+        String[] a = {"id=1", "name=张三"};
+        String[] b = {"id=1", "name=张三"};
+        String[] c = {"id=2", "name=张三"};
 
     }
 
@@ -100,9 +100,9 @@ public class TestList {
         List<Integer> collect = list.stream().sorted(Integer::compareTo).collect(Collectors.toList());
         System.out.println(collect);//[1, 3, 4, 5]
         for (int i = collect.size() - 1; i >= 0; i--) {
-           if (i==2){
-               collect.remove(i);
-           }
+            if (i == 2) {
+                collect.remove(i);
+            }
         }
         System.out.println(collect);
         System.out.println(list);
@@ -114,18 +114,18 @@ public class TestList {
         }
         System.out.println(list.size());
         System.out.println(count);
-		testWitn10(list);
+        testWitn10(list);
 
     }
 
-	void  testWitn10(List<Integer> list){
+    void testWitn10(List<Integer> list) {
 
-		List<Integer>  newList=list;
-		newList.remove(1);
-		System.out.println(list);
-		System.out.println(newList);
-		System.out.println(newList==list);
-	}
+        List<Integer> newList = list;
+        newList.remove(1);
+        System.out.println(list);
+        System.out.println(newList);
+        System.out.println(newList == list);
+    }
 
 
     /**
@@ -315,6 +315,10 @@ public class TestList {
         list.add(u3);
         list.add(u6);
         list.add(u2);
+        List<User> list2 = new ArrayList<User>();
+        list2.add(new User((Integer) 1, "1+1", "小明", (Integer) 0, "123456"));
+        list.removeAll(list2);
+
         System.out.println(list.toString());// [id:1,userName:小明, id:5,userName:小兵, id:4,userName:小黑, id:3,userName:小转,
         // id:6,userName:小太阳, id:2,userName:小红]
         // 因为user的tostring我只写了两个
