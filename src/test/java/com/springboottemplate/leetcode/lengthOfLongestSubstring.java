@@ -17,7 +17,7 @@ import java.util.List;
  * 它可以将嵌套的循环问题，转换为单循环问题，降低时间复杂度。)
  * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
  *
- * 滑块算法学习
+ * 滑动窗口算法(Sliding Window)
  * https://www.jianshu.com/p/e6622df3c377
  */
 public class lengthOfLongestSubstring {
@@ -26,13 +26,13 @@ public class lengthOfLongestSubstring {
     @Test
     public void lengthOfLongestSubstringTest() {
 
-        String s = "abcababbnghjek";
+        String s = "1233";
         System.out.println(lengthOfLongestSubstring(s));
 
     }
 
     /**
-     * 滑块算法
+     * 滑块算法，这种算法只能得到子串的长度，但是子串的值打印的是不对的
      * @param str
      * @return
      */
@@ -42,6 +42,7 @@ public class lengthOfLongestSubstring {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             l.add(c);
+
             long count = l.stream().distinct().count();
             if(l.size() != count){
                 l.removeFirst();
@@ -52,12 +53,15 @@ public class lengthOfLongestSubstring {
     }
 
 
+
+
+
+
+
     @Test
     public void testSubString() {
-
         String s = "12345";
         System.out.println(s.substring(4, 5));
-
     }
 
 

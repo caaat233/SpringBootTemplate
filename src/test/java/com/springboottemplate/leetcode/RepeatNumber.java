@@ -14,30 +14,30 @@ import java.util.Set;
  */
 public class RepeatNumber {
 
-	public static void main(String[] args) {
-		int[] arr = { 1, 5, 6, 8, 4, 2, 2, 6, 7 ,6,6,6,2};
-		int[] arr2={2, 3, 1, 0, 2, 5};
-		RepeatNumber number = new RepeatNumber();
-		number.examine(arr);
-		number.examine(arr2);
-	}
+    public static void main(String[] args) {
+        int[] arr = {1, 5, 6, 8, 4, 2, 2, 6, 7, 6, 6, 6, 2};
+        int[] arr2 = {2, 3, 1, 0, 2, 5};
+        RepeatNumber number = new RepeatNumber();
+        number.examine(arr);
+        number.examine(arr2);
+    }
 
-	public void examine(int[] arr) {//原始方法实现
-	  int count=0;
-	  Map maps=new HashMap<Integer, Object>();
-	//  List<Integer> list=new java.util.LinkedList<Integer>();//这个集合是可以重复的，
-	  Set set=new HashSet<Integer>();
-		for (int i = 0; i < arr.length; i++) {
-             if(maps.containsKey(arr[i])) {
-            	 set.add(arr[i]);
-            	continue;
-             }
-             maps.put(arr[i], "");
+    public void examine(int[] arr) {//原始方法实现
+        int count = 0;
+        Map maps = new HashMap<Integer, Object>();
+        //  List<Integer> list=new java.util.LinkedList<Integer>();//这个集合是可以重复的，
+        Set set = new HashSet<Integer>();
+        for (int i = 0; i < arr.length; i++) {
+            if (maps.containsKey(arr[i])) {
+                set.add(arr[i]);
+                continue;
+            }
+            maps.put(arr[i], "");
 
 
-		}
-		System.out.println(set.toString());
+        }
+        System.out.println(set.toString());
 
-	}
+    }
 
 }

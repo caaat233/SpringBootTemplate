@@ -42,6 +42,18 @@ public class JavaValueTransfer {
 
     }
 
+    @Test
+    public void objectUserReferA() {
+        User user = new User();
+        user.setId("1");
+        user.setEmail("123@qq.com");
+        User userA=user;
+        userA.setId("2");
+        System.out.println(user);
+        System.out.println(userA);
+
+    }
+
     public void modifyUser(User user) {
         System.out.println(user);//com.springboottemplate.jvm.User@4c98385c
     }
@@ -53,4 +65,27 @@ class User {
     private String id;
     private String email;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

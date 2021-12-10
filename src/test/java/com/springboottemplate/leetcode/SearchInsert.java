@@ -9,7 +9,7 @@ import org.junit.Test;
  * 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
  * <p>
  * 请必须使用时间复杂度为 O(log n) 的算法。(强迫你使用二分查找去，如果有序的话，使用遍历复杂度是n，很简单的)
- * 
+ *
  * <p>
  * <p>
  * 示例 1:
@@ -43,7 +43,7 @@ import org.junit.Test;
  * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/search-insert-position
- *
+ * <p>
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
@@ -57,7 +57,7 @@ public class SearchInsert {
         while (left <= right) {//不能等于：需要明白二分查找的性质，如果没有找到对应的值，则右指针会指向最大小于target的值。
             int midlle = left + (right - left) / 2;//防止整型溢出
             if (target == nums[midlle]) {
-                return midlle;
+                return midlle;//如果跟middle相等，直接返回model的位置
             } else if (target > nums[midlle]) {
                 left = midlle + 1;
             } else {
