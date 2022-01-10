@@ -1,4 +1,4 @@
-package com.springboottemplate.leetcode;
+package com.springboottemplate.leetcode.search;
 
 import org.junit.Test;
 

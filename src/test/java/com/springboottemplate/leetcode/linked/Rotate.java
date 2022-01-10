@@ -1,4 +1,4 @@
-package com.springboottemplate.leetcode;
+package com.springboottemplate.leetcode.linked;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;

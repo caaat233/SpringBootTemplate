@@ -1,12 +1,15 @@
 package com.springboottemplate.temp;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @author 唐涛
- * @description: 多态
+ * @description: 多态, 子类初始化之前，要先初始化父类，所以子类有的构造器，父类也要有
  * @date 2021/11/8 11:06
  */
 public class Dog extends Animal {
 
+    String dogName = "dogName";
 
     public Dog(String name, int id) {
         super(name, id);
@@ -32,17 +35,19 @@ public class Dog extends Animal {
 
     public static void main(String[] args) {
 
-        Animal animal = new Dog();//上转型
+        Animal animal = new Dog("小狗", 1);//上转型
         animal.eat();
         animal.sleeep();
-
+        System.out.println(animal.id + " " );
+        System.out.println(JSON.toJSONString(animal));
         //下转型1
-        Dog dog=(Dog)animal;//这里转换不会报错，因为animal本身指向的就是Dog
+        Dog dog = (Dog) animal;//这里转换不会报错，因为animal本身指向的就是Dog
         dog.eat();
         dog.sleeep();
-
+       // dog.name; name是父类私有的，获取不到，但是可以通过get方法
+        System.out.println(dog.getName());
         //下转型2
-        Dog dog2=(Dog)new Animal();//这里会报错，类型转换异常
+        Dog dog2 = (Dog) new Animal();//这里会报错，类型转换异常
         dog.eat();
         dog.sleeep();
         /**
@@ -55,8 +60,6 @@ public class Dog extends Animal {
          *
          *
          */
-
-
 
 
     }

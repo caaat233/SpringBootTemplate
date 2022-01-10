@@ -9,6 +9,8 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.util.ConcurrentModificationException;
+import java.util.HashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -21,7 +23,7 @@ public class RedisStringTest {
     static Lock lock = new ReentrantLock();
     Jedis jedis;
 
-     {
+    {
         //初始化操作
         //1、设置连接池的配置对象
         JedisPoolConfig config = new JedisPoolConfig();
@@ -31,13 +33,13 @@ public class RedisStringTest {
         config.setMaxIdle(10);
         //2、设置连接池对象
         JedisPool POOL = new JedisPool(config, "118.31.55.236", 6379);
-         jedis = POOL.getResource();
+        jedis = POOL.getResource();
     }
 
 
     @Test
-    public void resolveCacheBreakdown2_Test() throws  Exception {
-         //模拟两个线程
+    public void resolveCacheBreakdown2_Test() throws Exception {
+        //模拟两个线程
         Thread t1 = new Thread(new Runnable() {
             @SneakyThrows
             @Override
@@ -60,17 +62,16 @@ public class RedisStringTest {
         Thread.sleep(1000000000);
 
     }
+
     /**
      * 解决缓存击穿的问题（资源中心的方案比较粗暴，直接限流就完事了，流量大了直接降级,最好不要回答限流，解决问题太粗暴）
      * 分布式缓存的解救方案，运用set name zhangsan EX 10 NX   解决
-     *这个锁比较细，只会锁住查询userId相同的线程，
-     *
-     *
+     * 这个锁比较细，只会锁住查询userId相同的线程，
+     * <p>
+     * <p>
      * 如果是缓存穿透的话，key的值可以设置个空，或者设置个固定值，如果值相等，直接返回空，防止缓存击穿
      *
-     *
-     *
-     * @param userId  互
+     * @param userId 互
      * @return
      * @throws Exception
      */
@@ -81,15 +82,15 @@ public class RedisStringTest {
             String ok = jedis.set(keyLock, "1", "NX", "EX", 10);
             if (StringUtils.isNotBlank(ok) && "OK".equals(ok)) {
                 //说明拿到锁了，查询数据库，这里不需要try,因为就算代码抛出异常也不存在死锁的可能
-                System.out.println(Thread.currentThread().getName()+":我拿到锁了，我要查询数据库了");
+                System.out.println(Thread.currentThread().getName() + ":我拿到锁了，我要查询数据库了");
                 String dataFromDB = getDataFromDB(userId, true);
                 //将数据写入缓存
                 jedis.set("userId", dataFromDB);
-                System.out.println(Thread.currentThread().getName()+"：userId的值是"+userId);
+                System.out.println(Thread.currentThread().getName() + "：userId的值是" + userId);
                 return dataFromDB;
             } else {
                 //说明没拿到锁，         这时候需要自旋
-                System.out.println(Thread.currentThread().getName()+":我没拿到锁,缓存也没数据,先小憩一下");
+                System.out.println(Thread.currentThread().getName() + ":我没拿到锁,缓存也没数据,先小憩一下");
                 Thread.sleep(200);// 睡一会儿
                 return resolveCacheBreakdown2(userId);// 重试
             }
@@ -105,14 +106,14 @@ public class RedisStringTest {
      */
 
     /**
-     *https://juejin.cn/post/6844904150996615182     ReentrantLock 学习
+     * https://juejin.cn/post/6844904150996615182     ReentrantLock 学习
      */
 
     public String resolveCacheBreakdown(String userId) throws Exception {
         if (jedis.get(userId) == null) {
             if (lock.tryLock()) {//可以理解为锁的是lock这个对象，是对象锁，由于这个对象也是单例的，所以功能上实现了类锁的功能
                 try {//防止报错不放锁
-                    System.out.println(Thread.currentThread().getName()+":我拿到锁了，我要查询数据库了");
+                    System.out.println(Thread.currentThread().getName() + ":我拿到锁了，我要查询数据库了");
                     String dataFromDB = getDataFromDB(userId, true);
                     //将数据写入缓存
                     jedis.set("userId", dataFromDB);
@@ -123,7 +124,7 @@ public class RedisStringTest {
                 //如果拿不到锁，先查询一下缓存，看一下，现在是不是存在数据了
                 if (jedis.get(userId) == null) {
                     //说明还是查不到数据，这时候需要自旋
-                    System.out.println(Thread.currentThread().getName()+":我没拿到锁,缓存也没数据,先小憩一下");
+                    System.out.println(Thread.currentThread().getName() + ":我没拿到锁,缓存也没数据,先小憩一下");
                     Thread.sleep(200);// 睡一会儿
                     return resolveCacheBreakdown(userId);// 重试
                 } else {
@@ -146,7 +147,7 @@ public class RedisStringTest {
         System.out.println(jedis.set("null", "null"));
         System.out.println(jedis.get("null"));
         System.out.println(jedis.get("null1111111") == null ? "1" : "0");//获取不存在的key,返回null
-        User user=new User();
+        User user = new User();
         user.setId("1");
         user.setName("张三");
         user.setEmail("923972487@qq.com");
@@ -154,18 +155,27 @@ public class RedisStringTest {
         jedis.set("user1", JSON.toJSONString(user));
         User user1 = JSON.parseObject(jedis.get("user1"), User.class);
         System.out.println(user1);
+
+//        String hdArray = valueOperations.get("loadPowerHd");
+//        int index=0,loop = 20;
+//        boolean condition = true;
+//        while(condition) {
+//            index++;
+//            if(!"".equals(hdArray)||StringUtils.isNotNull(hdArray)){
+//                condition = false;
+//            }else {
+//                Thread.sleep(50);
+//                hdArray = valueOperations.get("loadPowerHd");
+//            }
+//            if(index==loop&&StringUtils.isNull(hdArray)) {
+//                return null;
+//            }
+//        }
+//        List<LoadpowerData> list = JSON.parseArray(hdArray,LoadpowerData.class);
+//
+//
+
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**

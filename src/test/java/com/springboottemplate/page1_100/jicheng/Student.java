@@ -18,7 +18,7 @@ public class Student extends Person {
 	}
 
 	public void show1() {
-		System.out.println("show1");
+//		System.out.println("show1");
 		System.out.println(super.a);
 		System.out.println(this.a);
 		show2();

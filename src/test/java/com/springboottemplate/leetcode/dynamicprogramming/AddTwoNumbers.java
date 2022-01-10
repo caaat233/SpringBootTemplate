@@ -1,4 +1,4 @@
-package com.springboottemplate.leetcode;
+package com.springboottemplate.leetcode.dynamicprogramming;
 
 import org.junit.Test;
 

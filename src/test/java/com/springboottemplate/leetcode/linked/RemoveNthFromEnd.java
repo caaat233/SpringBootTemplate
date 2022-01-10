@@ -1,5 +1,6 @@
-package com.springboottemplate.leetcode;
+package com.springboottemplate.leetcode.linked;
 
+import com.springboottemplate.leetcode.linked.ListNode;
 import org.junit.Test;
 
 /**
@@ -40,7 +41,6 @@ public class RemoveNthFromEnd {
         cur.next = cur.next.next;
         ListNode ans = dummy.next;
         return ans;
-
     }
 
 

@@ -8,9 +8,9 @@ package com.springboottemplate.temp;
 public class Animal {
 
     private String name;
-    private int id;
+    public int id;
 
-    private int age;
+    public int age;
 
     /**
      * 无参构造器，用来new对象的
@@ -51,5 +51,29 @@ public class Animal {
 
     public void introduction() {
         System.out.println("大家好！我是" + id + "号" + name + ".");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
